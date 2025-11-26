@@ -27,7 +27,7 @@ def task_detail(request, pk):
     if task.owner != request.user:
         return render(
             request,
-            'errors/403.html',
+            '403.html',
             {'message': "You do not have permission to view this task."},
             status=403
         )
@@ -63,7 +63,7 @@ def task_edit(request, pk):
     if task.owner != request.user:
         return render(
             request,
-            'errors/403.html',
+            '403.html',
             {'message': "You do not have permission to edit this task."},
             status=403
         )
@@ -92,7 +92,7 @@ def task_delete(request, pk):
     if task.owner != request.user:
         return render(
             request,
-            'errors/403.html',
+            '403.html',
             {'message': "You do not have permission to delete this task."},
             status=403
         )
