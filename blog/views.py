@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Post
 
 
-def post_list(request):
+def post_list(request, template_name='blog/post_list.html'):
     posts = Post.objects.filter(published=True).order_by('-published_at')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, template_name, {'posts': posts})
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug, published=True)

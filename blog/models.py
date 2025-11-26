@@ -8,6 +8,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     body = models.TextField()
+    excerpt = models.TextField(blank=True)
     published = models.BooleanField(default=False)
     published_at = models.DateTimeField(null=True, blank=True)
     is_submission = models.BooleanField(default=False)

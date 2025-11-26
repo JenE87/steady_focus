@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- home.html content starts here -->
+<div class="container">
+  
+  <!-- Welcome Section -->
+  <div class="mb-4">
+    {% if user.is_authenticated %}
+    <h1 class="mb-2">Welcome back, {{ user.username }}!</h1>
+    <p>Feel free to continue managing your tasks or explore the blog.</p>
+
+    <a href="{% url 'tasks:task_list' %}" class="btn btn-primary me-2">View Tasks</a>
+    <a href="{% url 'blog:post_list' %}" class="btn btn-secondary me-2">Browse Blog</a>
+
+    {% else %}
+    <h1 class="mb-2">Welcome!</h1>
+    <p>Browse the latest blog posts or log in to access tasks and more.</p>
+
+    <a href="{% url 'account_login' %}" class="btn btn-primary me-2">Log In</a>
+    <a href="{% url 'account_signup' %}" class="btn btn-secondary me-2">Sign Up</a>
+    <a href="{% url 'blog:post_list' %}" class="btn btn-outline-dark">Browse Blog</a>
+    {% endif %}
+  </div>
+
+  <!-- Blog Post List -->
+  <hr>
+  <h2 class="mt-4">Latest Posts</h2>
+
+  {% for post in posts %}
+  <div class="mb-4">
+    <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+    <p class="text-muted">{{ post.created_at }}</p>
+    {% if post.excerpt %}
+    <p>{{ post.excerpt }}</p>
+    {% else %}
+    <p>{{ post.body|truncatewords:20 }}</p>
+    {% endif %}
+  </div>
+  {% empty %}
+  <p>No blog posts available yet.</p>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
