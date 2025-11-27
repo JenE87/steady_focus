@@ -8,6 +8,27 @@
     </a>
 </h1>
 
+<form method="get" class="mb-3 d-flex gap-3">
+
+    <!-- Filter dropdown -->
+    <select name="status" class="form-select w-auto" onchange="this.form.submit()">
+        <option value="" {% if not current_status %}selected{% endif %}>All Tasks</option>
+        <option value="open" {% if current_status == 'open' %}selected{% endif %}>Open Tasks</option>
+        <option value="completed" {% if current_status == 'completed' %}selected{% endif %}>Completed Tasks</option>
+    </select>
+
+    <!-- Sort dropdown -->
+    <select name="sort" class="form-select w-auto" onchange="this.form.submit()">
+        <option value="" {% if not current_sort %}selected{% endif %}>Sort: Default</option>
+        <option value="due" {% if current_sort == 'due' %}selected{% endif %}>Due Date</option>
+        <option value="title" {% if current_sort == 'title' %}selected{% endif %}>Title</option>
+        <option value="created" {% if current_sort == 'created' %}selected{% endif %}>Created Date</option>
+    </select>
+
+    <noscript><button type="submit" class="btn btn-primary btn-sm">Apply</button></noscript>
+
+</form>
+
 {% if tasks %}
     <ul>
         {% for t in tasks %}

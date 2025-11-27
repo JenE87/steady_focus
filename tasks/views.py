@@ -16,8 +16,35 @@ class TaskList(LoginRequiredMixin, ListView):
     
     
     def get_queryset(self):
-        # Return tasks only for the logged-in user, ordered by completion then due date
-        return Task.objects.filter(owner=self.request.user).order_by('completed', 'due_date')
+        qs = Task.objects.filter(owner=self.request.user)
+
+        # --- Filtering ---
+        status = self.request.GET.get("status")
+        if status == "completed":
+            qs = qs.filter(completed=True)
+        elif status == "open":
+            qs = qs.filter(completed=False)
+
+        # --- Sorting ---
+        sort = self.request.GET.get("sort")
+        
+        if sort == "due":
+            qs = qs.order_by("completed", "due_date")
+        elif sort == "title":
+            qs = qs.order_by("completed", "title")
+        elif sort == "created":
+            qs = qs.order_by("completed", "-created_at")
+        else:
+            # Default sort: completed at bottom, soonest due at top
+            qs = qs.order_by("completed", "due_date")
+
+        return qs
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx["current_status"] = self.request.GET.get("status", "")
+        ctx["current_sort"] = self.request.GET.get("sort", "")
+        return ctx
 
 
 def task_detail(request, pk):
