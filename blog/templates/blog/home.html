@@ -33,7 +33,7 @@
     <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
     <p class="text-muted">{{ post.created_at }}</p>
     {% if post.excerpt %}
-    <p>{{ post.excerpt }}</p>
+    <p>{{ post.excerpt|safe }}</p>
     {% else %}
     <p>{{ post.body|truncatewords:45|safe }}</p>
     {% endif %}
