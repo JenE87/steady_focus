@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Pomodoro Timer{% endblock%}
+
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="text-center mb-3">Pomodoro Timer</h1>
+
+    <div class="text-center mb-3">
+        <div id="mode-label" class="h5">Work</div>
+        <div id="time-display" class="display-3 my-3">25:00</div>
+
+        <button id="start-btn" class="btn btn-success me-2">Start</button>
+        <button id="pause-btn" class="btn btn-warning me-2" disabled>Pause</button>
+        <button id="reset-btn" class="btn btn-danger">Reset</button>
+    </div>
+
+    <div class="text-center mb-3">
+        <span class="me-2">Presets:</span>
+        <button class="btn btn-outline-dark preset-btn me-2" data-work="25" data-break="5">25 / 5</button>
+        <button class="btn btn-outline-dark preset-btn" data-work="50" data-break="10">50 / 10</button>
+    </div>
+
+    <p class="text-center text-muted">
+        Simple Pomodoro: choose a preset time then Start. When a session ends you'll be notified (no automatic auto-start).
+    </p>
+</div>
+
+<!-- load external JS -->
+<script src="{% static 'js/pomodoro.js' %}"></script>
+{% endblock %}
