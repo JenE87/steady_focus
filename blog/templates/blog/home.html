@@ -30,7 +30,7 @@
 
   {% for post in posts %}
   <div class="mb-4">
-    <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+    <h3><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a></h3>
     <p class="text-muted">{{ post.created_at }}</p>
     {% if post.excerpt %}
     <p>{{ post.excerpt|safe }}</p>
