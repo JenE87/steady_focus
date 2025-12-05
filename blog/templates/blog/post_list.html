@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
   <h1>Blog</h1>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <p>Got ideas for new blog posts? Feel free to share them with us.</p>
+    <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary mb-4">Submit a blog idea</a>
+  </div>
   {% if posts %}
     <ul>
       {% for p in posts %}

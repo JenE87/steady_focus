@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Post
+from .models import Post, Idea
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
@@ -15,3 +15,6 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     readonly_fields = ('created_at', 'published_at')
     summernote_fields = ('body',)
+
+
+admin.site.register(Idea)

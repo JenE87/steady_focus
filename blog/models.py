@@ -42,3 +42,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title if not self.is_submission else f"{self.title} (submission)"
+
+class Idea(models.Model):
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+    submitter_name = models.CharField(max_length=200, blank=True)
+    submitter_email = models.EmailField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    reviewed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.title} ({self.created_at.date()})"
