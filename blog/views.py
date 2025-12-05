@@ -20,7 +20,7 @@ def idea_submit(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Thanks - your idea has been submitted!")
-            return redirect('blog:home')
+            return redirect('home')
     else:
         form = IdeaForm()
     return render(request, 'blog/idea_submit.html', {'form': form})
