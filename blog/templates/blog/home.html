@@ -31,11 +31,11 @@
   {% for post in posts %}
   <div class="mb-4">
     <h3><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a></h3>
-    <p class="text-muted">{{ post.created_at }}</p>
+    <p class="text-muted">{{ post.created_at|date:"F j, Y" }}</p>
     {% if post.excerpt %}
     <p>{{ post.excerpt|safe }}</p>
     {% else %}
-    <p>{{ post.body|truncatewords:45|safe }}</p>
+    <p>{{ post.body|truncatewords_html:45|safe }}</p>
     {% endif %}
   </div>
   {% empty %}
