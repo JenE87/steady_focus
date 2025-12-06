@@ -17,4 +17,20 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('body',)
 
 
-admin.site.register(Idea)
+@admin.register(Idea)
+class IdeaAdmin(admin.ModelAdmin):
+    list_display = ('title', 'submitter_name', 'submitter_email', 'created_at', 'reviewed')
+    list_filter = ('reviewed', 'created_at')
+    search_fields = ('title', 'body', 'submitter_name', 'submitter_email')
+    ordering = ('-created_at',)
+    actions = ['mark_reviewed', 'mark_unreviewed']
+
+    def mark_reviewed(self, request, queryset):
+        updated = queryset.update(reviewed=True)
+        self.message_user(request, f"{updated} idea(s) marked as reviewed.")
+    mark_reviewed.short_description = "Mark selected ideas as reviewed"
+
+    def mark_unreviewed(self, request, queryset):
+        updated = queryset.update(reviewed=False)
+        self.message_user(request, f"{updated} idea(s) marked as unreviewed.")
+    mark_unreviewed.short_description = "Mark selected ideas as unreviewed"
