@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from blog import views as blog_views
 
 urlpatterns = [
-    path('', blog_views.post_list, {'template_name': 'blog/home.html'}, name="home"),
+    path('', blog_views.home, name="home"),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('blog/', include('blog.urls', namespace='blog')),

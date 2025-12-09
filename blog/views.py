@@ -5,6 +5,15 @@ from .models import Post, Idea
 from .forms import IdeaForm
 
 
+def home(request):
+    """
+    Home view: render blog/home.html with a small list of latest posts (currently 6).
+    Keeps the homepage separate from the paginated post_list.
+    """
+    posts = Post.objects.filter(published=True).order_by('-created_at')[:6]
+    return render(request, 'blog/home.html', {'posts': posts})
+
+
 def post_list(request, *args, **kwargs):
     """
     Function-based post list view with pagination (mobile-first grid).
