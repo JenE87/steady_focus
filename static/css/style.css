@@ -1,6 +1,115 @@
-body {
-  padding-top: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+/* --- Variables & Setup --- */
+:root {
+    /* --- Steady Focus Color Palette --- */
+    
+    /* Primary Action (Steel Blue): Used for Headings, Main Buttons, Links */
+    --sf-primary: #4682B4; 
+    
+    /* Accent/Success (Pale Green): Used for Timer Start, Success Messages */
+    --sf-accent: #98FB98;  
+
+    /* Background (Near White): Reduces glare compared to pure white */
+    --sf-bg: #F7F7F7;      
+
+    /* Text (Dark Navy/Ash): High contrast without being harsh black */
+    --sf-text: #2C3E50;    
+
+    /* Break State (Light Slate): Visual cue for Break Mode in Timer */
+    --sf-break: #B0C4DE;   
+
+    /* Typography */
+    --font-main: 'Lexend', 'Verdana', sans-serif;
 }
 
-.navbar-brand { font-weight: 700; }
+/* Apply global font and background */
+body {
+    font-family: var(--font-main);
+    background-color: var(--sf-bg);
+    color: var(--sf-text);
+    line-height: 1.7; 
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 500;
+    color: var(--sf-primary); /* Keep headings in the calming blue */
+}
+
+/* --- Buttons --- */
+/* Primary Buttons */
+.btn-primary {
+    background-color: var(--sf-primary); /* Uses Steel Blue */
+    border-color: var(--sf-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    /* Manually darkening Steel Blue slightly for hover effect */
+    background-color: #31689b; 
+    border-color: #31689b;
+}
+
+/* Success Buttons (Timer Start) - Uses the Pale Green */
+.btn-success, #start-btn { 
+    background-color: var(--sf-accent); /* Uses #98FB98 */
+    border-color: var(--sf-accent);
+    color: var(--sf-text); /* Dark text on light green for readability */
+    font-weight: 600;
+}
+.btn-success:hover, #start-btn:hover {
+    background-color: #72db72; /* Slightly darker green hover */
+    border-color: #72db72;
+    color: var(--sf-text);
+}
+
+/* --- Django Messages (The attention-catcher) --- */
+/* Base Message Styling */
+.alert {
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Give them a subtle lift */
+}
+
+/* Success Message (Post submission, Task completion) */
+.alert-success {
+    background-color: var(--sf-accent); /* Pale Green background */
+    color: var(--sf-text); 
+    border-left: 5px solid var(--sf-primary); /* Steel Blue accent line */
+}
+
+/* Error/Danger Message */
+.alert-danger {
+    background-color: #f8d7da; /* Light Red */
+    border-left: 5px solid #dc3545; /* Standard Red accent line */
+}
+
+/* Info/Warning Message */
+.alert-info, .alert-warning {
+    background-color: #fff3cd; /* Light Yellow */
+    color: var(--sf-text);
+    border-left: 5px solid #ffc107; /* Standard Yellow accent line */
+}
+
+/* --- Card & Typography (Kept from previous) --- */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    transition: transform 0.2s;
+    background-color: white;
+}
+.card:hover {
+    transform: translateY(-3px);
+}
+.card-text {
+    /* Fix for words breaking mid-word on narrow screens */
+    -webkit-hyphens: none;
+    hyphens: none; 
+    overflow-wrap: break-word;
+}
+.timer-display-lg {
+    font-size: 6rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--sf-primary); /* Timer numbers use primary color */
+}
