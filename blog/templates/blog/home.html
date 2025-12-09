@@ -1,50 +1,119 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block title %}Steady Focus — Home{% endblock %}
 
-<!-- home.html content starts here -->
+{% block content %}
 <div class="container">
-  
+
   <!-- Welcome Section -->
   <div class="mb-4">
     {% if user.is_authenticated %}
-    <h1 class="mb-2">Welcome back, {{ user.username }}!</h1>
-    <p>Feel free to continue managing your tasks or explore the blog.</p>
+      <h1 class="mb-2">Welcome back, {{ user.username }}!</h1>
+      <p>Feel free to continue managing your tasks or explore the blog.</p>
 
-    <a href="{% url 'tasks:task_list' %}" class="btn btn-primary me-2">View Tasks</a>
-    <a href="{% url 'blog:post_list' %}" class="btn btn-secondary me-2">Browse Blog</a>
+      <a href="{% url 'tasks:task_list' %}" class="btn btn-primary me-2">View Tasks</a>
+      <a href="{% url 'blog:post_list' %}" class="btn btn-secondary me-2">Browse Blog</a>
 
     {% else %}
-    <h1 class="mb-2">Welcome!</h1>
-    <p>Browse the latest blog posts or log in to access tasks and more.</p>
+      <h1 class="mb-2">Welcome!</h1>
+      <p>Browse the latest blog posts or log in to access tasks and more.</p>
 
-    <a href="{% url 'account_login' %}" class="btn btn-primary me-2">Log In</a>
-    <a href="{% url 'account_signup' %}" class="btn btn-secondary me-2">Sign Up</a>
-    <a href="{% url 'blog:post_list' %}" class="btn btn-outline-dark">Browse Blog</a>
+      <a href="{% url 'account_login' %}" class="btn btn-primary me-2">Log In</a>
+      <a href="{% url 'account_signup' %}" class="btn btn-secondary me-2">Sign Up</a>
+      <a href="{% url 'blog:post_list' %}" class="btn btn-outline-dark">Browse Blog</a>
     {% endif %}
   </div>
 
-  <!-- Blog Post List -->
   <hr>
+
+  <!-- Intro Section -->
+  <section class="mb-4 intro-text">
+    <h2 class="h3">Welcome to Steady Focus</h2>
+    <h3 class="h5 text-muted">Find Your Flow — One Task at a Time</h3>
+
+    <p>Staying focused shouldn’t feel like a battle. Whether you’re living with ADHD or just feeling overwhelmed, you deserve tools that support the way your brain works.</p>
+
+    <p><strong>Steady Focus helps you move from intention to action:</strong></p>
+
+    <ul>
+      <li><strong>Clarify:</strong> Capture your thoughts in a simple, distraction-free <strong>Task List</strong>.</li>
+      <li><strong>Learn:</strong> Explore practical, science-backed strategies in our <strong>Blog</strong>.</li>
+      <li><strong>Execute:</strong> Use the built-in <strong>Pomodoro Timer</strong> to break tasks into doable steps.</li>
+    </ul>
+
+    <p>You don’t need more willpower — just a steadier approach.<br>Let’s begin.</p>
+  </section>
+
+  <!-- Posts header (dynamic title on later pages) -->
   <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2 class="h3 mb-3">Latest Posts</h2>
+    <h2 class="h3 mb-3">
+      {% if page_obj.number == 1 %}Latest Posts{% else %}More Posts (page {{ page_obj.number }}){% endif %}
+    </h2>
     <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary mb-4">Submit a blog idea</a>
   </div>
 
-  {% for post in posts %}
-  <div class="mb-4">
-    <h3><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a></h3>
-    <p class="text-muted">{{ post.created_at|date:"F j, Y" }}</p>
-    {% if post.excerpt %}
-    <p>{{ post.excerpt|safe }}</p>
-    {% else %}
-    <p>{{ post.body|truncatewords_html:45|safe }}</p>
-    {% endif %}
-  </div>
-  {% empty %}
-  <p>No blog posts available yet.</p>
-  {% endfor %}
+  <!-- Posts loop (excerpted) -->
+  {% if posts %}
+    <div class="row g-3">
+      {% for post in posts %}
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h4">
+                <a href="{% url 'blog:post_detail' post.slug %}" class="text-decoration-none">{{ post.title }}</a>
+              </h3>
+
+              <p class="text-muted small mb-2">{{ post.created_at|date:"F j, Y" }}</p>
+
+              {% if post.excerpt %}
+                <div class="card-text mb-3">{{ post.excerpt|safe }}</div>
+              {% else %}
+                <div class="card-text mb-3">{{ post.body|truncatechars_html:100|safe }}</div>
+              {% endif %}
+
+              <div class="mt-auto">
+                <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No blog posts available yet.</p>
+  {% endif %}
+
+  <!-- Pagination -->
+  {% if is_paginated %}
+    <nav aria-label="Home posts pagination" class="mt-4">
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo; Prev</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled"><span class="page-link">&laquo; Prev</span></li>
+        {% endif %}
+
+        {# show nearby page numbers (mobile-first) #}
+        {% for num in page_obj.paginator.page_range %}
+          {% if num >= page_obj.number|add:-1 and num <= page_obj.number|add:1 %}
+            <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+              <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">Next &raquo;</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled"><span class="page-link">Next &raquo;</span></li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
 
 </div>
-
 {% endblock %}

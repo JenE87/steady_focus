@@ -7,11 +7,20 @@ from .forms import IdeaForm
 
 def home(request):
     """
-    Home view: render blog/home.html with a small list of latest posts (currently 6).
+    Home view: render blog/home.html with a small list of latest posts.
     Keeps the homepage separate from the paginated post_list.
     """
-    posts = Post.objects.filter(published=True).order_by('-created_at')[:6]
-    return render(request, 'blog/home.html', {'posts': posts})
+    posts_qs = Post.objects.filter(published=True).order_by('-created_at')
+
+    paginator = Paginator(posts_qs, 3)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+    
+    return render(request, 'blog/home.html', {
+        'posts': page_obj.object_list,
+        'page_obj': page_obj,
+        'is_paginated': page_obj.has_other_pages(),
+        })
 
 
 def post_list(request, *args, **kwargs):

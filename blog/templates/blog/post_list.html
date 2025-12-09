@@ -22,7 +22,7 @@
               </div>
 
               <a href="{% url 'blog:post_detail' post.slug %}" class="post-link text-decoration-none">
-                <h2 class="card-title">{{ post.title }}</h2>
+                <h2 class="card-title h4">{{ post.title }}</h2>
                 <p class="card-text text-muted small mb-2">{{ post.created_at|date:"F j, Y" }}</p>
                 <p class="card-text">{{ post.excerpt }}</p>
               </a>
