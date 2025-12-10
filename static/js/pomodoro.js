@@ -13,7 +13,7 @@ const modeEl = document.getElementById('mode-label');
 const toggleBtn = document.getElementById('toggle-btn');
 const resetBtn = document.getElementById('reset-btn');
 const presetBtns = document.querySelectorAll('.preset-btn');
-const notificationSound = new Audio("{% static 'audio/bell.mp3' %}");
+const notificationSound = document.getElementById('notification-sound');
 
 // Helper: update the MM:SS text and mode label
 function updateDisplay() {
