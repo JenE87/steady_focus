@@ -112,7 +112,8 @@ h1, h2, h3, h4, h5 {
     background-color: white;
 }
 
-.card:hover {
+/* Apply lift only if the card does not have the 'no-hover-lift' class */
+.card:not(.no-hover-lift):hover {
     transform: translateY(-3px); /* Subtle lift effect */
 }
 
