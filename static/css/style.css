@@ -48,13 +48,24 @@ h1, h2, h3, h4, h5 {
     border-color: #31689b;
 }
 
-/* Success Buttons (Timer Start) - Uses the Pale Green */
+.btn-outline-primary {
+    color: var(--sf-primary);
+    border-color: var(--sf-primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--sf-primary);
+    color: white;
+}
+
+/* Success Buttons (Timer Start) */
 .btn-success, #start-btn { 
-    background-color: var(--sf-accent); /* Uses #98FB98 */
+    background-color: var(--sf-accent); /* Uses Pale Green */
     border-color: var(--sf-accent);
     color: var(--sf-text); /* Dark text on light green for readability */
     font-weight: 600;
 }
+
 .btn-success:hover, #start-btn:hover {
     background-color: #72db72; /* Slightly darker green hover */
     border-color: #72db72;
@@ -90,7 +101,7 @@ h1, h2, h3, h4, h5 {
     border-left: 5px solid #ffc107; /* Standard Yellow accent line */
 }
 
-/* --- Card & Typography (Kept from previous) --- */
+/* --- Cards --- */
 .card {
     border: none;
     border-radius: 12px;
@@ -98,18 +109,26 @@ h1, h2, h3, h4, h5 {
     transition: transform 0.2s;
     background-color: white;
 }
+
 .card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Subtle lift effect */
 }
+
 .card-text {
     /* Fix for words breaking mid-word on narrow screens */
     -webkit-hyphens: none;
     hyphens: none; 
     overflow-wrap: break-word;
 }
+
+/* --- Blog Readability --- */
+.post-body {
+    font-size: 1.1rem; 
+}
+
+/* --- Timer --- */
 .timer-display-lg {
     font-size: 6rem;
     font-weight: 600;
-    font-variant-numeric: tabular-nums;
     color: var(--sf-primary); /* Timer numbers use primary color */
 }
