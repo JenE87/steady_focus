@@ -29,9 +29,11 @@ body {
     line-height: 1.7; 
 }
 
+/* Apply the Lexend font to all headings, overriding any default browser or Bootstrap font stack */
 h1, h2, h3, h4, h5 {
-    font-weight: 500;
-    color: var(--sf-primary); /* Keep headings in the calming blue */
+    font-family: var(--font-main) !important; /* <-- ADD THIS LINE */
+    font-weight: 600; /* Increased weight for better visual hierarchy */
+    color: var(--sf-primary) !important; 
 }
 
 /* --- Buttons --- */
@@ -124,6 +126,20 @@ h1, h2, h3, h4, h5 {
 /* --- Blog Readability --- */
 .post-body {
     font-size: 1.1rem; 
+}
+
+/* Ensure the post content inherits the desired font */
+.post-body,
+.post-body p,
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body ul,
+.post-body ol,
+.post-body blockquote,
+.post-title {
+    /* Set the font family to inherit from the body */
+    font-family: var(--font-main) !important; 
 }
 
 /* --- Timer --- */
