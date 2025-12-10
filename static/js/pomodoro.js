@@ -1,19 +1,19 @@
 // Simple Pomodoro timer - works with pomodoro/templates/pomodoro.html
 
 // Settings (in seconds)
-let workMinutes = 25;
-let breakMinutes = 5;
+let workMinutes = 1; // SET BACK TO 25 ONCE BUGS ARE CLEARED
+let breakMinutes = 1; // SET BACK TO 5 ONCE BUGS ARE CLEARED
 let remainingSeconds = workMinutes * 60;
 let mode = 'work';  // 'work' or 'break'
 let timer = null;
 
-// DOM elements
-const displayEl = document.getElementById('time-display');
-const modeEl = document.getElementById('mode-label');
-const toggleBtn = document.getElementById('toggle-btn');
-const resetBtn = document.getElementById('reset-btn');
-const presetBtns = document.querySelectorAll('.preset-btn');
-const notificationSound = document.getElementById('notification-sound');
+// DECLARE variables globally (assigning them in DOMContentLoaded block below)
+let displayEl;
+let modeEl;
+let toggleBtn;
+let resetBtn;
+let presetBtns;
+let notificationSound;
 
 // Helper: update the MM:SS text and mode label
 function updateDisplay() {
@@ -43,7 +43,10 @@ function startTimer() {
       toggleBtn.innerHTML = '<i class="fa-solid fa-play me-1"></i>Start';
       toggleBtn.classList.replace('btn-warning', 'btn-success');
       resetBtn.disabled = false;
-      notificationSound.play(); // Play bell sound
+      // Play bell sound
+      if (notificationSound) {
+        notificationSound.play();
+       }
 
       if (mode === 'work') {
         mode = 'break';
@@ -114,6 +117,14 @@ function setPreset(w, b) {
 // Ensure the script runs only after the HTML elements are fully loaded
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Assign DOM elements, guaranteeing they exist
+  displayEl = document.getElementById('time-display');
+  modeEl = document.getElementById('mode-label');
+  toggleBtn = document.getElementById('toggle-btn');
+  resetBtn = document.getElementById('reset-btn');
+  presetBtns = document.querySelectorAll('.preset-btn');
+  notificationSound = document.getElementById('notification-sound');
+  
   // Wire up events
   toggleBtn.addEventListener('click', toggleTimer);
   resetBtn.addEventListener('click', resetTimer);
