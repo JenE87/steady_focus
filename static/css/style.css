@@ -148,3 +148,24 @@ h1, h2, h3, h4, h5 {
     font-weight: 600;
     color: var(--sf-primary); /* Timer numbers use primary color */
 }
+
+/* --- Task List Styles --- */
+.list-group-item {
+    border: none; /* Remove Bootstrap default subtle border */
+    border-bottom: 2px solid #ddd; /* Use a slightly stronger, visible light gray line for separation */
+    padding: 1rem 1.25rem;
+    background-color: white; /* Ensure a bright white background for contrast against sf-bg */
+    
+    /* Add a subtle shadow for visual separation — less than a card, but more than a simple line */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+    border-radius: 0; /* Keeps items stacking neatly without internal gaps */
+}
+
+.list-group-item a {
+    color: var(--sf-primary) !important;
+    font-weight: 500;
+}
+
+.list-group-item a:hover {
+    color: #31689b !important; /* Slightly darker primary color on hover */
+}

@@ -1,66 +1,116 @@
 {% extends "base.html" %}
 
+{% block title %}My Tasks | Steady Focus{% endblock %}
+
 {% block content %}
-<h1 class="d-flex justify-content-between align-items-center">
-    Tasks
-    <a href="{% url 'tasks:task_create' %}" class="btn btn-success btn-sm">
-        + Add Task
-    </a>
-</h1>
+<div class="container py-4">
+    <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+            <h1 class="h2 mb-0">My Tasks</h1>
+            <p class="text-muted small mb-0">Manage your flow.</p>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+            <a href="{% url 'tasks:task_create' %}" class="btn btn-success shadow-sm">
+                <i class="fa-solid fa-plus me-1"></i> Add New Task
+            </a>
+        </div>
+    </div>
 
-<form method="get" class="mb-3 d-flex gap-3">
+    <div class="card p-3 mb-4 bg-light border-0">
+        <form method="get" class="row g-2 align-items-center">
+            <div class="col-auto">
+                <span class="fw-bold small text-muted text-uppercase me-2"><i class="fa-solid fa-filter me-1"></i>Filter:</span>
+            </div>
+            
+            <!-- Filter dropdown -->
+            <div class="col-auto">
+                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                    <option value="" {% if not current_status %}selected{% endif %}>All Tasks</option>
+                    <option value="open" {% if current_status == 'open' %}selected{% endif %}>Open</option>
+                    <option value="completed" {% if current_status == 'completed' %}selected{% endif %}>Completed</option>
+                </select>
+            </div>
 
-    <!-- Filter dropdown -->
-    <select name="status" class="form-select w-auto" onchange="this.form.submit()">
-        <option value="" {% if not current_status %}selected{% endif %}>All Tasks</option>
-        <option value="open" {% if current_status == 'open' %}selected{% endif %}>Open Tasks</option>
-        <option value="completed" {% if current_status == 'completed' %}selected{% endif %}>Completed Tasks</option>
-    </select>
+            <div class="col-auto ms-md-3">
+                <span class="fw-bold small text-muted text-uppercase me-2"><i class="fa-solid fa-arrow-down-short-wide me-1"></i>Sort:</span>
+            </div>
 
-    <!-- Sort dropdown -->
-    <select name="sort" class="form-select w-auto" onchange="this.form.submit()">
-        <option value="" {% if not current_sort %}selected{% endif %}>Sort: Default</option>
-        <option value="due" {% if current_sort == 'due' %}selected{% endif %}>Due Date</option>
-        <option value="title" {% if current_sort == 'title' %}selected{% endif %}>Title</option>
-        <option value="created" {% if current_sort == 'created' %}selected{% endif %}>Created Date</option>
-    </select>
+            <!-- Sort dropdown -->
+            <div class="col-auto">
+                <select name="sort" class="form-select form-select-sm" onchange="this.form.submit()">
+                    <option value="" {% if not current_sort %}selected{% endif %}>Default</option>
+                    <option value="due" {% if current_sort == 'due' %}selected{% endif %}>Due Date</option>
+                    <option value="title" {% if current_sort == 'title' %}selected{% endif %}>Title</option>
+                    <option value="created" {% if current_sort == 'created' %}selected{% endif %}>Created Date</option>
+                </select>
+            </div>
+            
+            <noscript>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary btn-sm">Apply</button>
+                </div>
+            </noscript>
+        </form>
+    </div>
 
-    <noscript><button type="submit" class="btn btn-primary btn-sm">Apply</button></noscript>
-
-</form>
-
-{% if tasks %}
-    <ul>
-        {% for t in tasks %}
-            <li class="mb-2">
-                <!-- Completed tasks are automatically striked through -->
-                <span class="{% if t.completed %}text-decoration-line-through text-muted{% endif %}">
-                    <a href="{% url 'tasks:task_detail' t.pk %}">{{ t.title }}</a>
-                    {% if t.due_date %} - <small>{{ t.due_date }}</small>{% endif %}
-                </span>                    
-                    <!-- Edit & delete links -->
-                <span class="ms-2">
-                    <a href="{% url 'tasks:task_edit' t.pk %}" class="text-decoration-non me-2">Edit</a>
-                    <a href="{% url 'tasks:task_delete' t.pk %}" class="text-decoration-none text-danger">Delete</a>
-                </span>
+    {% if tasks %}
+        <div class="list-group shadow-sm">
+            {% for t in tasks %}
+                <div class="list-group-item p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 {% if t.completed %}bg-light{% endif %}">
                     
-                {% if t.completed %}
-                <!-- Show badge upon task completion -->
-                <span class="badge bg-success ms-2">Completed</span>
-                {% else %}
-                <form method="post" action="{% url 'tasks:task_toggle' t.pk %}" class="d-inline">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-outline-success btn-sm" title="Mark as complete">
-                        Done?
-                    </button>
-                </form>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No tasks entered yet.</p>
-    <a href="{% url 'tasks:task_create' %}" class="btn btn-success btn-sm">+ Create your first task</a>
-{% endif %}
+                    <div class="flex-grow-1">
+                        <div class="d-flex align-items-center mb-1">
+                            <a href="{% url 'tasks:task_detail' t.pk %}" class="h5 mb-0 text-decoration-none text-dark {% if t.completed %}text-decoration-line-through text-muted{% endif %}">
+                                {{ t.title }}
+                            </a>
+                            {% if t.completed %}
+                            <!-- Show badge upon task completion -->
+                            <span class="badge bg-success ms-2 small">Done</span>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="text-muted small">
+                            {% if t.due_date %}
+                                <span class="me-3 {% if t.is_overdue and not t.completed %}text-danger fw-bold{% endif %}">
+                                    <i class="fa-regular fa-calendar me-1"></i>{{ t.due_date|date:"F j, Y" }}
+                                </span>
+                            {% endif %}
+                            {% if t.estimated_minutes %}
+                                <span><i class="fa-regular fa-clock me-1"></i>{{ t.estimated_minutes }} min</span>
+                            {% endif %}
+                        </div>
+                    </div>
 
+                    <div class="d-flex align-items-center gap-2">
+                        {% if not t.completed %}
+                            <form method="post" action="{% url 'tasks:task_toggle' t.pk %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-success btn-sm" title="Mark Complete">
+                                    <i class="fa-solid fa-check me-1"></i>Done
+                                </button>
+                            </form>
+                        {% endif %}
+                        
+                        <!-- Edit & delete links -->
+                        <div class="btn-group">
+                            <a href="{% url 'tasks:task_edit' t.pk %}" class="btn btn-outline-secondary btn-sm" title="Edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <a href="{% url 'tasks:task_delete' t.pk %}" class="btn btn-outline-danger btn-sm" title="Delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center py-5 bg-white rounded shadow-sm">
+            <h3 class="h5 text-muted">You have no tasks yet.</h3>
+            <p class="mb-4">Clear your mind and write down what needs to be done.</p>
+            <a href="{% url 'tasks:task_create' %}" class="btn btn-primary">Create First Task</a>
+        </div>
+    {% endif %}
+</div>
 {% endblock %}
