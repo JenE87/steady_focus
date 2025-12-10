@@ -63,7 +63,27 @@ The following tools and technologies were used to build this project:
 - WAVE® Evaluation Tool (Web Accessibility)
 - PEP8 Python Validator
 ### Fixed Bug
+- **Server error (500) when submitting blog ideas in production**
+  - Cause: `Idea` model migrations were not applied on Heroku.
+  - Fix: Commit migration files manually on Heroku. 
+- **`{% static %}` template tag throwing errors**
+  - Cause: Missing `{% load static %}` at top of templates
+  - Fix: Added `{% load static %}` directly under `{% extends "base.html" %}`.
+- **`post_list()` got unexpected keyword argument `template_name`**
+  - Cause: Passing CBV-only kwargs (`template_name`) to a function-based view.
+  - Fix: Added a proper `home()` FBV for the root URL instead of misusing `post_list`.
+- **Navbar link not routin to homepage**
+  -  Cause: Link pointed to `/` which routed to `post_list` instead of `home`.
+  -  Fix: Added `{% url 'home' %}` and set root URL to a real homepage view.
+- **Pagination not workong in FBV setup**
+  - Cause: Missing `is_paginated`, `page_obj`, and consistent context names.
+  - Fix: Added these to the FBV and updated templates accordingly. 
+
 ### Unfixed Bugs
+- **Words breaking mid-letter inside Bootsrap cards**
+  - Cause: Browser default word splitting behaviour.
+  - Initial Fix (does not solve bug entirely yet): Tried adding CSS `word-break: normal; overflow-wrap: break-word;` and refined clamping styles.
+  - Bug improved, but not fixed yet
 
 ## Deployment
 ### Local Setup
@@ -73,4 +93,5 @@ The following tools and technologies were used to build this project:
 ## Credits
 ### Code
 ### Content & Media
+
 
