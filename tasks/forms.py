@@ -1,4 +1,6 @@
 from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Field
 from .models import Task
 
 
@@ -10,12 +12,21 @@ class TaskForm(forms.ModelForm):
         model = Task
         fields = ['title', 'description', 'estimated_minutes', 'due_date', 'completed']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Short descriptive title'}),
-            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': 'Optional task details'}),
-            'estimated_minutes': forms.NumberInput(attrs={'class': 'form-control', 'min': 1, 'placeholder': 'Estimated task duration (e.g. 30)'}),
-            'due_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'completed': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'description': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Optional task details'}),
+            'due_date': forms.DateInput(attrs={'type': 'date'}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.layout = Layout(
+            'title',
+            'description',
+            'estimated_minutes',
+            'due_date',
+            Field('completed', css_class="form-check-input"),
+        )
 
     def clean_estimated_minutes(self):
         value = self.cleaned_data.get('estimated_minutes')

@@ -1,42 +1,27 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}My Tasks | Steady Focus{% endblock %}
 
 {% block content %}
 <div class="container py-4">
-    <h1>{% if task %}Edit task{% else %} Create a new task{% endif %}</h1>
+    <div class="card shadow-sm p-4 border-0 no-hover-lift">
+        <h1 class="h4 mb-4">{% if task %}Edit Task{% else %}Create New Task{% endif %}</h1>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.non_field_errors }}
-        <div class="mb-3">
-            {{ form.title.label_tag }}<br>
-            {{ form.title }}
-            {{ form.title.errors }}
-        </div>
-        <div class="mb-3">
-            {{ form.description.label_tag }}<br>
-            {{ form.description }}
-            {{ form.description.errors }}
-        </div>
-        <div class="mb-3">
-            {{ form.estimated_minutes.label_tag }}<br>
-            {{ form.estimated_minutes }}
-            {{ form.estimated_minutes.errors }}
-        </div>
-        <div class="mb-3">
-            {{ form.due_date.label_tag }}<br>
-            {{ form.due_date }}
-            {{ form.due_date.errors }}
-        </div>
-        <div class="mb-3">
-            <label for="{{ form.completed.id_for_label }}" class="form-label">Completed:</label>
-            {{ form.completed }} 
-            {{ form.completed.errors }}
-        </div>
+        <form method="post">
+            {% csrf_token %}
 
-        <button type="submit" class="btn btn-primary btn-sm">{% if task %}Edit task{% else %} Create task{% endif %}</button>
-        <a href="{% url 'tasks:task_list' %}" class="btn btn-secondary btn-sm ms-2">Cancel</a>
-    </form>
+            {{ form|crispy }}
+
+            <div class="mt-4 pt-3 border-top">
+                <button type="submit" class="btn btn-primary btn-sm px-4">
+                    {% if task %}Save Changes{% else %}Create Task{% endif %}
+                </button>
+                <a href="{% url 'tasks:task_list' %}" class="btn btn-secondary btn-sm ms-2 px3">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}

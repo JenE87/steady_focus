@@ -35,7 +35,7 @@ html, body {
 
 /* Apply the Lexend font to all headings, overriding any default browser or Bootstrap font stack */
 h1, h2, h3, h4, h5 {
-    font-family: var(--font-main) !important; /* <-- ADD THIS LINE */
+    font-family: var(--font-main) !important; /*
     font-weight: 600; /* Increased weight for better visual hierarchy */
     color: var(--sf-primary) !important; 
 }
@@ -142,9 +142,10 @@ h1, h2, h3, h4, h5 {
 .post-body ul,
 .post-body ol,
 .post-body blockquote,
-.post-title {
+.post-title,
+.card-title {
     /* Set the font family to inherit from the body */
-    font-family: var(--font-main) !important; 
+    font-family: var(--font-main) !important;
 }
 
 /* --- Timer --- */
