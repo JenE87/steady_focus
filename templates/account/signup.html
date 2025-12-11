@@ -1,11 +1,36 @@
 {% extends "base.html" %}
-{% block title %}Sign up{% endblock %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}Sign up | Steady Focus{% endblock %}
+
 {% block content %}
-<h1>Sign up</h1>
-<form method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Create account</button>
-</form>
-<p>Already registered? <a href="{% url 'account_login' %}">Log in</a></p>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow-sm p-4 border-0 no-hover-lift">
+        <h1 class="h3 mb-4 text-center">Create Account</h1>
+
+        <form method="post" action="{% url 'account_signup' %}">
+          {% csrf_token %}
+          {{ form|crispy }}
+          
+          <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-primary btn-sm py-2">
+              Create Account
+            </button>
+          </div>
+        </form>
+
+        <hr class="my-4">
+
+        <div class="text-center small">
+          <p class="mb-0">
+            Already registered? <a href="{% url 'account_login' %}" class="fw-bold">Log in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
