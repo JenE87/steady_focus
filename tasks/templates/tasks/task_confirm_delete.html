@@ -1,14 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <h1>Confirm deletion of task</h1>
-    <p>Are you sure you want to delete the task "<strong>{{ task.title }}</strong>"?</p>
+<div class="container py-5">
+    <div class="card p-4 shadow-sm border-0 bg-light no-hover-lift">
+        <h1 class="h4 text-danger mb-3">
+            <i class="fa-solid fa-triangle-exclamation me-2"></i>Confirm Deletion
+        </h1>
+        <p>
+            Are you sure you want to delete the task:
+            "<strong>{{ task.title }}</strong>"?
+        </p>
 
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger btn-sm">Yes, delete</button>
-        <a href="{% url 'tasks:task_detail' task.pk %}" class="btn btn-secondary btn-sm ms-2">Cancel</a>
-    </form>
+        <form method="post" class="mt-2">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-sm px-3">
+                <i class="fa-solid fa-trash-can me-2"></i>Yes, Delete Permanently
+            </button>
+            <a href="{% url 'tasks:task_detail' task.pk %}" class="btn btn-secondary btn-sm ms-2 px-3">
+                <i class="fa-solid fa-angle-left me-2"></i>Cancel
+            </a>
+        </form>
+    </div>
 </div>
 {% endblock %}
