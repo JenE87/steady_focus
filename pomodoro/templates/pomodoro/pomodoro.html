@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block title %}Pomodoro Timer | Steady Focus{% endblock%}
 
 {% block content %}
@@ -40,5 +41,5 @@
 </div>
 
 <audio id="notification-sound" src="{% static 'audio/bell.wav' %}" preload="auto"></audio>
-<script src="{% static 'js/pomodoro.js' %}"></script>
+{% block extra_js %}<script src="{% static 'js/pomodoro.js' %}"></script>{% endblock %}
 {% endblock %}

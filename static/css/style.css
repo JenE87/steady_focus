@@ -29,6 +29,10 @@ body {
     line-height: 1.7; 
 }
 
+html, body {
+    height: 100%;
+}
+
 /* Apply the Lexend font to all headings, overriding any default browser or Bootstrap font stack */
 h1, h2, h3, h4, h5 {
     font-family: var(--font-main) !important; /* <-- ADD THIS LINE */
