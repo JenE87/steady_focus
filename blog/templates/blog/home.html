@@ -8,15 +8,16 @@
   <!-- Welcome Section -->
   <div class="mb-4">
     {% if user.is_authenticated %}
-      <h1 class="mb-2">Welcome back, {{ user.username }}!</h1>
-      <p>Feel free to continue managing your tasks or explore the blog.</p>
+      <h1 class="h4 mb-2">Welcome back, {{ user.username }}!</h1>
+      <p>Ready to find your flow? Your tasks and timer are waiting. Or looking for our latest articles.</p>
 
-      <a href="{% url 'tasks:task_list' %}" class="btn btn-primary me-2">View Tasks</a>
-      <a href="{% url 'blog:post_list' %}" class="btn btn-secondary me-2">Browse Blog</a>
+      <a href="{% url 'tasks:task_list' %}" class="btn btn-primary btn-sm me-2">View Tasks</a>
+      <a href="{% url 'pomodoro:pomodoro_home' %}" class="btn btn-success btn-sm me-2">Pomodoro Timer</a>
+      <a href="{% url 'blog:post_list' %}" class="btn btn-secondary btn-sm me-2">Browse Blog</a>
 
     {% else %}
-      <h1 class="mb-2">Welcome!</h1>
-      <p>Browse the latest blog posts or log in to access tasks and more.</p>
+      <h1 class="h4 mb-2">Find Your Flow.</h1>
+      <p>Tools designed for neurodivergent brains. Organize tasks, time your focus, and stop feeling overwhelmed.</p>
 
       <a href="{% url 'account_login' %}" class="btn btn-primary me-2">Log In</a>
       <a href="{% url 'account_signup' %}" class="btn btn-secondary me-2">Sign Up</a>
@@ -28,8 +29,8 @@
 
   <!-- Intro Section -->
   <section class="mb-4 intro-text">
-    <h2 class="h3">Welcome to Steady Focus</h2>
-    <h3 class="h5 text-muted">Find Your Flow — One Task at a Time</h3>
+    <h2 class="h1 mb-3">Welcome to Steady Focus</h2>
+    <h3 class="h5 mb-3 text-muted">Find Your Flow — One Task at a Time</h3>
 
     <p>Staying focused shouldn’t feel like a battle. Whether you’re living with ADHD or just feeling overwhelmed, you deserve tools that support the way your brain works.</p>
 
