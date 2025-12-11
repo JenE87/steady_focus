@@ -77,13 +77,27 @@ The following tools and technologies were used to build this project:
   -  Fix: Added `{% url 'home' %}` and set root URL to a real homepage view.
 - **Pagination not workong in FBV setup**
   - Cause: Missing `is_paginated`, `page_obj`, and consistent context names.
-  - Fix: Added these to the FBV and updated templates accordingly. 
+  - Fix: Added these to the FBV and updated templates accordingly.
+- **Audio Notification not playing at timer completion**
+  - Cause: An ID mismatch in the HTML/JavaScript (`notification sound` vs `notification-sound`).
+  - Fix: Standardizef the element ID.
+- **Pomodoro timer crashing at zero**
+  - Cause: Attempting to call `.play()` on a global audio variable before the DOM had fully loaded, resulting in a `null` reference error.
+  - Fix: Wrapped DOM element assignments within a `DOMContentLoaded` event listener. 
+- **CSS hover effects causing visual confusion on detail views**
+  - Cause: A global `.card:hover` transition was causing the entire task detail view to "lift", which distracted from functional buttons like "Edit" and "Delete".
+  - Fix: Added a `.no-hover-lift` class and updated the CSS selector to `:not(-no-hover-lift)` to exclude single-view cards from the animation. 
+- **Django template tags failing inside external JavaScript file**
+  - Cause: Attempting to use {% static %} tags directly inside pomodoro.js to define file paths, which Django template engine does not process for static files.
+  - Fix: Integrated the audio element directly into the `pomodoro.html` template using Django tags and referenced the element in JavaScript via its ID.
 
 ### Unfixed Bugs
+- **Lexend font and primary color not consistently applying to all headings**
+  - Cause: Potential CSS specificity conflicts with Bootstrap's default heading styles or specific card and container classes overriding the global font-family and primary color rule.
+  - Status: Parked for future styling refactor; core functionality prioritized.
 - **Words breaking mid-letter inside Bootsrap cards**
   - Cause: Browser default word splitting behaviour.
-  - Initial Fix (does not solve bug entirely yet): Tried adding CSS `word-break: normal; overflow-wrap: break-word;` and refined clamping styles.
-  - Bug improved, but not fixed yet
+  - Status: Tried adding CSS `word-break: normal; overflow-wrap: break-word;` and refined clamping styles. Bug improved, but not fixed yet. Parked for future adjustment and prioritized core functionality.
 
 ## Deployment
 ### Local Setup
@@ -93,5 +107,6 @@ The following tools and technologies were used to build this project:
 ## Credits
 ### Code
 ### Content & Media
+
 
 
