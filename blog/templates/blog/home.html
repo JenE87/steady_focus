@@ -3,17 +3,17 @@
 {% block title %}Steady Focus — Home{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container py-4">
 
   <!-- Welcome Section -->
   <div class="mb-4">
     {% if user.is_authenticated %}
       <h1 class="h4 mb-2">Welcome back, {{ user.username }}!</h1>
-      <p>Ready to find your flow? Your tasks and timer are waiting. Or looking for our latest articles.</p>
+      <p>Ready to find your flow? Your tasks and timer are waiting. Or enjoy reading our latest articles.</p>
 
-      <a href="{% url 'tasks:task_list' %}" class="btn btn-primary btn-sm me-2">View Tasks</a>
-      <a href="{% url 'pomodoro:pomodoro_home' %}" class="btn btn-success btn-sm me-2">Pomodoro Timer</a>
-      <a href="{% url 'blog:post_list' %}" class="btn btn-secondary btn-sm me-2">Browse Blog</a>
+      <a href="{% url 'tasks:task_list' %}" class="btn btn-outline-primary btn-sm me-2">View Tasks</a>
+      <a href="{% url 'pomodoro:pomodoro_home' %}" class="btn btn-outline-primary btn-sm me-2">Use Timer</a>
+      <a href="{% url 'blog:post_list' %}" class="btn btn-outline-primary btn-sm me-2">Browse Blog</a>
 
     {% else %}
       <h1 class="h4 mb-2">Find Your Flow.</h1>
@@ -58,7 +58,7 @@
     <div class="row g-3">
       {% for post in posts %}
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card mb-4">
+          <div class="card shadow-sm mb-4">
             <div class="card-body d-flex flex-column">
               <h3 class="card-title h4">
                 <a href="{% url 'blog:post_detail' post.slug %}" class="text-decoration-none">{{ post.title }}</a>
