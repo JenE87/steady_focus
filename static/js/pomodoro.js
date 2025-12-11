@@ -1,8 +1,8 @@
 // Simple Pomodoro timer - works with pomodoro/templates/pomodoro.html
 
 // Settings (in seconds)
-let workMinutes = 1; // SET BACK TO 25 ONCE BUGS ARE CLEARED
-let breakMinutes = 1; // SET BACK TO 5 ONCE BUGS ARE CLEARED
+let workMinutes = 25; // SET BACK TO 25 ONCE BUGS ARE CLEARED
+let breakMinutes = 5; // SET BACK TO 5 ONCE BUGS ARE CLEARED
 let remainingSeconds = workMinutes * 60;
 let mode = 'work';  // 'work' or 'break'
 let timer = null;
@@ -22,7 +22,17 @@ function updateDisplay() {
   const mm = String(minutes).padStart(2, '0');
   const ss = String(seconds).padStart(2, '0');
   displayEl.textContent = `${mm}:${ss}`;
-  modeEl.textContent = (mode === 'work') ? 'Work' : 'Break';
+  
+  // Dynamic Color Based on Work/Brake mode
+  if (mode === 'work') {
+    modeEl.textContent = 'Work';
+    modeEl.classList.remove('bg-primary', 'text-white');
+    modeEl.classList.add('bg-light', 'text-dark');
+  } else {
+    modeEl.textContent = 'Break';
+    modeEl.classList.remove('bg-light', 'text-dark');
+    modeEl.classList.add('bg-primary', 'text-white');
+  }
 }
 
 // Start timer (1-second ticks)
@@ -44,10 +54,10 @@ function startTimer() {
       toggleBtn.classList.replace('btn-warning', 'btn-success');
       resetBtn.disabled = false;
       // Play bell sound
-      if (notificationSound) {
-        notificationSound.play();
-       }
+      notificationSound.play();
 
+      // Auto-start the break timer
+      startTimer(); 
       if (mode === 'work') {
         mode = 'break';
         remainingSeconds = breakMinutes * 60;
