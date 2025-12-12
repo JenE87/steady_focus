@@ -192,3 +192,9 @@ h1, h2, h3, h4, h5 {
 .list-group-item a:hover {
     color: #31689b !important; /* Slightly darker primary color on hover */
 }
+
+/* --- Font Awesome Icons --- */
+/* Ensure that Font Awesome icons stay inline with text (on small screens) */
+.fa-solid, .fa-regular {
+    display: inline !important;
+}

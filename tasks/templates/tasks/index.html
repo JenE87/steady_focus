@@ -18,12 +18,10 @@
 
     <div class="card shadow-sm mb-4 p-3 bg-light border-0 no-hover-lift">
         <form method="get" class="row g-2 align-items-center">
-            <div class="col-auto">
-                <span class="fw-bold small text-muted text-uppercase me-2"><i class="fa-solid fa-filter me-1"></i>Filter:</span>
-            </div>
             
             <!-- Filter dropdown -->
-            <div class="col-auto">
+            <div class="col-auto d-flex align-items-center">
+                <span class="fw-bold small text-muted text-uppercase me-2"><i class="fa-solid fa-filter me-1"></i>Filter:</span>
                 <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
                     <option value="" {% if not current_status %}selected{% endif %}>All Tasks</option>
                     <option value="open" {% if current_status == 'open' %}selected{% endif %}>Open</option>
@@ -31,12 +29,9 @@
                 </select>
             </div>
 
-            <div class="col-auto ms-md-3">
-                <span class="fw-bold small text-muted text-uppercase me-2"><i class="fa-solid fa-arrow-down-short-wide me-1"></i>Sort:</span>
-            </div>
-
             <!-- Sort dropdown -->
-            <div class="col-auto">
+            <div class="col-auto ms-md-3 d-flex align-items-center">
+                <span class="fw-bold small text-muted text-uppercase me-2"><i class="fa-solid fa-arrow-down-short-wide me-1"></i>Sort:</span>
                 <select name="sort" class="form-select form-select-sm" onchange="this.form.submit()">
                     <option value="" {% if not current_sort %}selected{% endif %}>Default</option>
                     <option value="due" {% if current_sort == 'due' %}selected{% endif %}>Due Date</option>
