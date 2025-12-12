@@ -1,23 +1,63 @@
 # Steady Focus
-A lightweight productivity web app: public blog with visitor idea submissions, user task CRUD and a Pomodoro timer.
+A lightweight productivity web application featuring a public blog, visitor idea submissions, personal task management, and a built-in Pomodoro timer.
 
 [Live Demo](https://steady-focus-bc183b5c3b1f.herokuapp.com/)
 
 ## Project purpose
-Steady Focus helps users plan and run focused work sessions and collect/curate productivity content from visitors.
+Steady Focus aims to help users **plan and complete focused work sessions**, manage tasks, and optionally browse or contribute productivity ideas through a simple, distraction-free interface. The project is intentionally minimalist and neurodivergent-friendly, focusing on clarity, predictability, and ease of use.
 
 ## Features
-- Public blog (posts + admin publishing)  
-- Visitor blog submission form (saves as submissions for admin review)  
-- User accounts (register/login/logout via allauth)  
-- Task CRUD with owner-restrictions (private)  
-- Client-side Pomodoro timer (public)
+- **Public Blog**
+  - Clean card grid layout using Bootstrap 5.3
+  - Posts published by authenticated admin
+  - Dedicated blog homepage
+
+- **Visitor Blog Submission Form**
+  - Anyone (logged in or out) can submit ideas
+  - Submissions stored in DB for admin review (no auto-publish)
+
+- **User Accounts**
+  - Registration, login, logout via **django-allauth**
+  - Password authentication
+
+- **Task Management (CRUD)**
+  - Private task lists (each user sees only their own tasks)
+  - Create, read, update, delete tasks
+  - Task urgency badges (Overdue / Due Today / Done)
+  - Mobile-friendly layout
+  - Toggle completion directly from task list
+
+- **Pomodoro Timer**
+  - 25/5 and 50/10 presets
+  - Auto-switch work/break cycles
+  - Audio notification on cycle completion
+  - Fully client-side (no backend dependencies)
 
 ### Existing Features
+- Public blog with pagination
+- Detail views for posts
+- Blog idea submission form
+- Task filters and sorting options
+- Accessible colour choices & aria attributes
+- Custom 404/403 pages
+- Deployment via Heroku
+- Static file handling via Whitenoise
+
 ### Future Features (optional)
+- Editable Pomodoro presets stored per user
+- Themes (dark/light)
+- Categories/tags for blog posts
+- Task prioritisation or drag-and-drop reordering
+- Implement Focus Session model that connects task to the Pomodoro timer
 
 ## User Stories
-A [GitHub Kanban board](https://github.com/users/JenE87/projects/10) was set up in Git projects to capture User Stories and follow an agile development approach. For this purpose and to track the project's development progress the project board consists of four columns: Backlog, In Progress, In Review/QA and Done.
+A GitHub Kanban board captures all user stories and tracks the development progress using an Agile approach.
+
+Project Board:
+https://github.com/users/JenE87/projects/10
+
+Columns:
+**Backlog → In Progress → In Review/QA → Done**
 
 ## ERD
 <img width="1052" height="662" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" />
@@ -30,25 +70,37 @@ The following tools and technologies were used to build this project:
 - **CSS**
 - **JavaScript** (vanilla)
 
-### Tools & Services 
-- **HTML** 
+### Databases
+- **PostgreSQL** (production on Heroku)
+- **SQLite** (local development)
+
+### Frameworks & Libraries 
 - **Django 5.2.8**
-- **PostgreSQL** (production), **SQLite** (development)  
 - **django-allauth** for authentication  
 - **django-summernote** for rich text in admin
-- **[SmartDraw](https://www.smartdraw.com/)** - for creating and visualizing the ERD
-- **LanguageTool** - for grammar, spelling, paraphrasing support in code strings and documentation
-- **Lucid Chart** - for drawing the ERD
-- **ChatGPT** - for planning, debugging, and documentation support
-- **Google Gemini** - for planning, debugging, and documentation support
-
-### Development & Services
+- 
+### Tools & Services 
 - **VS Code** - IDE, code editor
 - **Python virtual Environment (venv)**
+- **SmartDraw / LucidChart** (ERD creation)
+- **LanguageTool** - for grammar, spelling, paraphrasing support in code strings and documentation
+- **ChatGPT + Google Gemini** - for planning, debugging, and documentation support
 
+### Deployment & Hosting
+- **Heroku**
+- **Whitenoise** (static file serving)
 
 ## Design & Layout
+Steady Focus follows a **minimalist, accessibility-first** design approach:
 
+- Limited colour palette for reduced cognitive load
+- Bootstrap 5.3 grid structure
+- Cards with consistent height for polished visual rhythm
+- No post images to avoid distraction
+- Lexend font for improved readability (ongoing refinement)
+- Reduced hover animations on detail pages for neurodivergent comfort
+- Semantic HTML + aria labels where beneficial
+- 
 ## Testing
 ### Manual Testing
 | Feature                           | Test Input                     | Expected Result               | Pass/Fail |
@@ -124,8 +176,8 @@ The following tools and technologies were used to build this project:
   - Fix: Added CSS `word-break: normal; overflow-wrap: break-word;` and refined clamping styles.
 
 ### Unfixed Bugs
-- **Lexend font and primary color not consistently applying to all headings**
-  - Cause: Potential CSS specificity conflicts with Bootstrap's default heading styles or specific card and container classes overriding the global font-family and primary color rule.
+- **Lexend font and primary color not applying constantly**
+  - Cause: Likely Bootstrap specificity issue
   - Status: Parked for future styling refactor; core functionality prioritized.
 
 ## Deployment
@@ -135,9 +187,37 @@ The following tools and technologies were used to build this project:
 
 ## Credits
 ### Code
+- Code Institute LMS course materials
+- Antionio Melé (2025). *Django 5 By Example*. Packt Publishing Ltd.
+- [Django documentation](https://docs.djangoproject.com/en/6.0/) 
+- [Bootstrap 5 documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Python.org](https://www.python.org/)
+- [W3 schools](https://www.w3schools.com/)
+- [Geeksforgeeks - Python](https://www.geeksforgeeks.org/python/python-programming-language-tutorial/)
+- [freecodecamp](https://www.freecodecamp.org/news/)
+- [Stack Overflow](https://stackoverflow.com/questions)
+- [Medium - Member Articles](https://medium.com/)
+- [testdriven.io](https://testdriven.io/)
+- [codecademy](https://www.codecademy.com/)
+- [reddit](https://www.reddit.com/)
+- [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/)
+- [cosaslearning](https://cosaslearning.com/source-code-of-pomodoro-timer/#google_vignette)
+- [Valentino Gagliardi](https://www.valentinog.com/)
+- [Djangoheroes](https://djangoheroes.org/)
+- [Kulturbanause](https://kulturbanause.de/)
+- Sololearn (App)
+- Programming Hub (App)
+
 ### Content & Media
-
-
+- All written content authored by the project developer
+- No third-party images used (text-only interface)
+- Bell sound from [Mixkit](https://mixkit.co/free-sound-effects/bell/)
+- [Super Productivity](https://super-productivity.com/blog/pomodoro-technique-for-coders/)
+- [Flown](https://flown.com/blog/adhd/how-to-focus-when-you-have-adhd)
+- [Priory](https://www.priorygroup.com/blog/how-to-focus-and-manage-time-with-adhd)
+- [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
+- [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
+- [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
 
 
 
