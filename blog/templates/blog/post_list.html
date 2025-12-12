@@ -8,7 +8,7 @@
   <div class="row align-items-center mb-5">
     <div class="col-md-8">
       <h1 class="h2">The Blog</h1>
-      <p class="text-muted">Strategies, tips, and insights for a focused life.</p>
+      <p>Strategies, tips, and insights for a focused life.</p>
     </div>
     <div class="col-md-4 text-md-end">
       <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary btn-sm">
@@ -26,7 +26,7 @@
           <h2 class="h5 card-title mb-3">{{ post.title }}</h2>
               
           <div class="card-text text-muted flex-grow-1 mb-3">
-            {{ post.excerpt|default:post.body|truncatechars_html:120|safe }}
+            {{ post.excerpt|default:post.body|truncatechars_html:140|safe }}
           </div>
                 
           <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm align-self-start stretched-link">Read Article</a>

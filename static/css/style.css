@@ -8,8 +8,8 @@
     /* Accent/Success (Pale Green): Used for Timer Start, Success Messages */
     --sf-accent: #98FB98;  
 
-    /* Background (Near White): Reduces glare compared to pure white */
-    --sf-bg: #F7F7F7;      
+    /* Background (Soft Grey): Reduces glare compared to white */
+    --sf-bg: #E6E6E6;
 
     /* Text (Dark Navy/Ash): High contrast without being harsh black */
     --sf-text: #2C3E50;    

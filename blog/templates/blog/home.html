@@ -45,12 +45,14 @@
     <p>You don’t need more willpower — just a steadier approach.<br>Let’s begin.</p>
   </section>
 
+  <hr>
+
   <!-- Posts header (dynamic title on later pages) -->
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="h3 mb-3">
       {% if page_obj.number == 1 %}Latest Posts{% else %}More Posts (page {{ page_obj.number }}){% endif %}
     </h2>
-    <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary mb-4">Submit a blog idea</a>
+    <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary">Submit a blog idea</a>
   </div>
 
   <!-- Posts loop (excerpted) -->
@@ -70,7 +72,7 @@
                 {% if post.excerpt %}
                 {{ post.excerpt|safe }}
               {% else %}
-                {{ post.body|truncatechars_html:120|safe }}
+                {{ post.body|truncatechars_html:140|safe }}
               {% endif %}
               </div>
 

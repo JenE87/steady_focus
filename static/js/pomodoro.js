@@ -1,8 +1,8 @@
 // Simple Pomodoro timer - works with pomodoro/templates/pomodoro.html
 
 // Settings (in seconds)
-let workMinutes = 25; // SET BACK TO 25 ONCE BUGS ARE CLEARED
-let breakMinutes = 5; // SET BACK TO 5 ONCE BUGS ARE CLEARED
+let workMinutes = 1; // SET BACK TO 25 ONCE BUGS ARE CLEARED
+let breakMinutes = 1; // SET BACK TO 5 ONCE BUGS ARE CLEARED
 let remainingSeconds = workMinutes * 60;
 let mode = 'work';  // 'work' or 'break'
 let timer = null;
