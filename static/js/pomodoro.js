@@ -62,12 +62,10 @@ function startTimer() {
         mode = 'break';
         remainingSeconds = breakMinutes * 60;
         updateDisplay();
-        alert("Work session finished — time for a break!");
       } else {
         mode = 'work';
         remainingSeconds = workMinutes * 60;
         updateDisplay();
-        alert("Break finished — ready for the next work session!");
       }
     }
   }, 1000);
