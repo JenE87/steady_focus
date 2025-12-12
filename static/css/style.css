@@ -121,7 +121,24 @@ h1, h2, h3, h4, h5 {
     transform: translateY(-3px); /* Subtle lift effect */
 }
 
+/* Force uniform height and alignment for blog cards */
+.card.h-100 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
 .card-text {
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     /* Fix for words breaking mid-word on narrow screens */
     -webkit-hyphens: none;
     hyphens: none; 

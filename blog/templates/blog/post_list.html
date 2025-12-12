@@ -26,7 +26,7 @@
           <h2 class="h5 card-title mb-3">{{ post.title }}</h2>
               
           <div class="card-text text-muted flex-grow-1 mb-3">
-            {{ post.excerpt|default:post.body|truncatewords_html:30|safe }}
+            {{ post.excerpt|default:post.body|truncatechars_html:120|safe }}
           </div>
                 
           <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm align-self-start stretched-link">Read Article</a>
