@@ -71,8 +71,15 @@
                         
                         <div class="text-muted small">
                             {% if t.due_date %}
-                                <span class="me-3 {% if t.is_overdue and not t.completed %}text-danger fw-bold{% endif %}">
+                                <span class="me-3">
                                     <i class="fa-regular fa-calendar me-1"></i>{{ t.due_date|date:"F j, Y" }}
+                                    {% if not t.completed %}
+                                        {% if t.due_date < today %}
+                                            <span class="badge bg-danger ms-2">OVERDUE</span>
+                                        {% elif t.due_date == today %}
+                                            <span class="badge bg-warning text-dark ms-2">DUE TODAY</span>
+                                        {% endif %}
+                                    {% endif %}
                                 </span>
                             {% endif %}
                             {% if t.estimated_minutes %}

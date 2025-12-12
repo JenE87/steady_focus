@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils import timezone
 from django.views.generic import ListView
 from django.views.decorators.http import require_POST
 from .forms import TaskForm
@@ -42,6 +43,7 @@ class TaskList(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
+        ctx["today"] = timezone.now().date()
         ctx["current_status"] = self.request.GET.get("status", "")
         ctx["current_sort"] = self.request.GET.get("sort", "")
         return ctx
