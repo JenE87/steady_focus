@@ -52,7 +52,7 @@
     <h2 class="h3 mb-3">
       {% if page_obj.number == 1 %}Latest Posts{% else %}More Posts (page {{ page_obj.number }}){% endif %}
     </h2>
-    <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary">
+    <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary" aria-label="Submit a blog idea">
       <i class="fa-regular fa-lightbulb me-2"></i>Submit a Blog Idea
     </a>
   </div>
@@ -79,7 +79,9 @@
               </div>
 
               <div class="mt-auto">
-                <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm">Read more</a>
+                <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm" aria-label="Read the entire article">
+                  Read more
+                </a>
               </div>
             </div>
           </div>

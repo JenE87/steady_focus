@@ -6,7 +6,7 @@
 <div class="container py-4">
     <article class="bg-white p-4 p-md-5 rounded shadow-sm">
         <header class="mb-4">
-            <a href="{% url 'blog:post_list' %}" class="text-decoration-none text-muted small mb-3 d-inline-block">
+            <a href="{% url 'blog:post_list' %}" class="text-decoration-none text-muted small mb-3 d-inline-block" aria-label="Return to the blog post list">
                 <i class="fa-solid fa-arrow-left me-1"></i> Back to Blog
             </a>
             <h1 class="post-title h3 fw-bold mb-2">{{ post.title }}</h1>
@@ -25,7 +25,9 @@
         
         <div class="text-center">
             <p class="text-muted mb-3">Enjoyed this read?</p>
-            <a href="{% url 'blog:post_list' %}" class="btn btn-outline-primary">Read more articles</a>
+            <a href="{% url 'blog:post_list' %}" class="btn btn-outline-primary" aria-label="Return to the blog post list">
+                Read more articles
+            </a>
         </div>
     </article>
 </div>

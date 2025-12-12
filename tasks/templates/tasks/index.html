@@ -10,7 +10,7 @@
             <p>Manage your flow.</p>
         </div>
         <div class="col-md-6 text-md-end mt-3 mt-md-0">
-            <a href="{% url 'tasks:task_create' %}" class="btn btn-success btn-sm shadow-sm">
+            <a href="{% url 'tasks:task_create' %}" class="btn btn-success btn-sm shadow-sm" aria-label="Create a new task">
                 <i class="fa-solid fa-plus me-1"></i> Add New Task
             </a>
         </div>
@@ -21,8 +21,11 @@
             
             <!-- Filter dropdown -->
             <div class="col-auto d-flex align-items-center">
-                <span class="fw-bold small text-muted text-uppercase me-2"><i class="fa-solid fa-filter me-1"></i>Filter:</span>
-                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                <span class="fw-bold small text-muted text-uppercase me-2">
+                    <i class="fa-solid fa-filter me-1"></i>
+                    <span class="visually-hidden">Filter tasks by</span>Filter:
+                </span>
+                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()" aria-label="Task Status Filter">
                     <option value="" {% if not current_status %}selected{% endif %}>All Tasks</option>
                     <option value="open" {% if current_status == 'open' %}selected{% endif %}>Open</option>
                     <option value="completed" {% if current_status == 'completed' %}selected{% endif %}>Completed</option>
@@ -31,8 +34,11 @@
 
             <!-- Sort dropdown -->
             <div class="col-auto ms-md-3 d-flex align-items-center">
-                <span class="fw-bold small text-muted text-uppercase me-2"><i class="fa-solid fa-arrow-down-short-wide me-1"></i>Sort:</span>
-                <select name="sort" class="form-select form-select-sm" onchange="this.form.submit()">
+                <span class="fw-bold small text-muted text-uppercase me-2">
+                    <i class="fa-solid fa-arrow-down-short-wide me-1"></i>
+                    <span class="visually-hidden">Sort tasks by</span>Sort:
+                </span>
+                <select name="sort" class="form-select form-select-sm" onchange="this.form.submit()" aria-label="Task Sort Order">
                     <option value="" {% if not current_sort %}selected{% endif %}>Default</option>
                     <option value="due" {% if current_sort == 'due' %}selected{% endif %}>Due Date</option>
                     <option value="title" {% if current_sort == 'title' %}selected{% endif %}>Title</option>
@@ -87,19 +93,19 @@
                         {% if not t.completed %}
                             <form method="post" action="{% url 'tasks:task_toggle' t.pk %}">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-outline-success btn-sm" title="Mark Complete">
-                                    <i class="fa-solid fa-check me-1"></i>Done
+                                <button type="submit" class="btn btn-outline-success btn-sm" title="Mark Complete" aria-label="Mark task {{ t.title }} as Complete">
+                                    <i class="fa-solid fa-check me-1" aria-hidden="true"></i>Done
                                 </button>
                             </form>
                         {% endif %}
                         
                         <!-- Edit & delete links -->
                         <div class="btn-group">
-                            <a href="{% url 'tasks:task_edit' t.pk %}" class="btn btn-outline-secondary btn-sm" title="Edit">
-                                <i class="fa-solid fa-pen"></i>
+                            <a href="{% url 'tasks:task_edit' t.pk %}" class="btn btn-outline-secondary btn-sm" title="Edit" aria-label="Edit task {{ t.title }}">
+                                <i class="fa-solid fa-pen" aria-hidden="true"></i>
                             </a>
-                            <a href="{% url 'tasks:task_delete' t.pk %}" class="btn btn-outline-danger btn-sm" title="Delete">
-                                <i class="fa-regular fa-trash-can"></i>
+                            <a href="{% url 'tasks:task_delete' t.pk %}" class="btn btn-outline-danger btn-sm" title="Delete" aria-label="Delete task {{ t.title }}">
+                                <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>

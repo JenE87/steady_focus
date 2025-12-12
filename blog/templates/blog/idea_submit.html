@@ -40,8 +40,10 @@
               </div>
             {% endfor %}
 
-            <button type="submit" class="btn btn-primary">Submit idea</button>
-            <a href="{% url 'blog:post_list' %}" class="btn btn-link">Cancel</a>
+            <button type="submit" class="btn btn-primary" aria-label="Submit your idea">Submit idea</button>
+            <a href="{% url 'blog:post_list' %}" class="btn btn-link" aria-label="Cancel and do not submit idea">
+              Cancel
+            </a>
           </form>
 
         </div>

@@ -14,10 +14,10 @@
             {{ form|crispy }}
 
             <div class="mt-4 pt-3 border-top">
-                <button type="submit" class="btn btn-primary btn-sm px-4">
+                <button type="submit" class="btn btn-primary btn-sm px-4" aria-label="Create new task or edit existing task">
                     {% if task %}Save Changes{% else %}Create Task{% endif %}
                 </button>
-                <a href="{% url 'tasks:task_list' %}" class="btn btn-secondary btn-sm ms-2 px3">
+                <a href="{% url 'tasks:task_list' %}" class="btn btn-secondary btn-sm ms-2 px3" aria-label="Cancel">
                     Cancel
                 </a>
             </div>

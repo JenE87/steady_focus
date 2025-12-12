@@ -59,12 +59,22 @@
           <li class="nav-item">
             <form method="post" action="{% url 'account_logout' %}">
               {% csrf_token %}                
-              <button type="submit" class="btn btn-outline-secondary btn-sm rounded-pill px-3 mt-1">Logout</button>
+              <button type="submit" class="btn btn-outline-secondary btn-sm rounded-pill px-3 mt-1" aria-label="Log out of your account">
+                Logout
+              </button>
             </form>
           </li>
           {% else %}
-          <li class="nav-item me-2"><a class="btn btn-outline-primary btn-sm rounded-pill px-3 mb-2" href="{% url 'account_login' %}">Login</a></li>
-          <li class="nav-item"><a class="btn btn-primary btn-sm rounded-pill px-3 mb-2" href="{% url 'account_signup' %}">Sign up</a></li>
+          <li class="nav-item me-2">
+            <a class="btn btn-outline-primary btn-sm rounded-pill px-3 mb-2" href="{% url 'account_login' %}" aria-label="Log into your account">
+              Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary btn-sm rounded-pill px-3 mb-2" href="{% url 'account_signup' %}" aria-label="Create a new account">
+              Sign up
+            </a>
+          </li>
           {% endif %}
         </ul>
       </div>

@@ -11,7 +11,7 @@
       <p>Strategies, tips, and insights for a focused life.</p>
     </div>
     <div class="col-md-4 text-md-end">
-      <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary btn-sm">
+      <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary btn-sm" aria-label="Submit a blog idea">
         <i class="fa-regular fa-lightbulb me-2"></i>Submit a Blog Idea
       </a>
     </div>
@@ -29,7 +29,9 @@
             {{ post.excerpt|default:post.body|truncatechars_html:140|safe }}
           </div>
                 
-          <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm align-self-start stretched-link">Read Article</a>
+          <a class="btn btn-primary btn-sm align-self-start stretched-link" href="{% url 'blog:post_detail' post.slug %}" aria-label="Read the entire article">
+            Read Article
+          </a>
         </div>
       </div>
     </div>
