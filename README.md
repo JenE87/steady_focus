@@ -1,11 +1,10 @@
 # Steady Focus
 A lightweight productivity web app: public blog with visitor idea submissions, user task CRUD and a Pomodoro timer.
 
+[Live Demo](https://steady-focus-bc183b5c3b1f.herokuapp.com/)
+
 ## Project purpose
 Steady Focus helps users plan and run focused work sessions and collect/curate productivity content from visitors.
-
-## Live demo
-Heroku URL after deployment
 
 ## Features
 - Public blog (posts + admin publishing)  
@@ -54,8 +53,33 @@ The following tools and technologies were used to build this project:
 ### Manual Testing
 | Feature                           | Test Input                     | Expected Result               | Pass/Fail |
 |-----------------------------------|--------------------------------|-------------------------------|-----------|
-|      |                   |      |       |
-
+| Signup / Registration | Go to Sign up, fill valid email + password, submit | New user account created, redirected / logged in, user appears in admin/users. | Pass |
+| Login / Logout        | Login with valid creds, then click Logout | Login succeeds; navbar updates to show username; logout returns to public state. | Pass |
+| Protected routes (Tasks) | Access `/tasks/` while not logged in | Redirected to login page (or 403 if configured) | Pass |
+| Blog list (home & /blog/) | Visit homepage and /blog/ | Latest posts display, excerpts visible, cards render; pagination present when > page size. | Pass |
+| Blog post detail | Click a post card → open detail | Full post body displays, back link works. | Pass |
+| Blog idea submission (public) | Fill idea form (name/email/body) and submit (logged out & logged in) | Idea saved in DB (check admin), success message shown, no 500 error in prod. | Pass |
+| Blog Card Layout | Visit /blog/ page. | All post cards render at the same height, regardless of title length or excerpt length. | Pass |
+| Idea admin moderation | In Django admin, find Idea entry and toggle reviewed / delete | Changes persist, no errors, list view shows new state. | Pass |
+| Pagination edge cases | Request `?page=333` and `?page=-1` | Shows last or current page (no 500); pagination links correct. | Pass |
+| Excerpt truncation (cards) | Post with long words and long body shown in card grid  | Words do not split mid-letter; truncation/clamp shows ellipsis, readable on mobile. | Pass |
+| Task CRUD (create/edit/delete) | Create a task, edit fields, mark completed, delete | Each action saves correctly; list updates; delete removes from DB and UI. | Pass |
+| Task ownership / permissions | User A creates task; User B attempts to view/edit/delete task URL | User B gets 403 or is redirected; only owner can edit/delete. | Pass |
+| Quick-toggle complete (task list) | Click quick-complete toggle button on task list | Task toggles completed state immediately; UI updates (badge/strike-through). | Pass |
+| Task filters & sorting | Use status filter & sort dropdowns | List filters/sorts correctly and follows queryset parameters. | Pass |
+| Task list mobile layout | Open task list on narrow viewport (mobile) | Layout stacks vertically, buttons large enough to tap, no overflow. | Pass |
+| Pomodoro timer core functionality | Start → let run → reaches 0 → switches to break → bell rings | Timer counts down; on finish mode switches, bell rings, and timer for new mode auto-starts | Pass |
+| Pomodoro presets | Click 25/5 and 50/10 presets then Start | Timer uses selected durations; display updates accordingly. | Pass |
+| Pomodoro pause / resume / reset | Start, Pause, Resume, Reset | Pause stops ticking; Resume continues; Reset resets remaining time to preset. | Pass |
+| Pomodoro sound/auto-switch | Start work timer (25 min preset). Let the timer count down to 0:00. | The bell sound plays, and the timer automatically switches to the 5-minute break session, and back to a 25-minute work session | Pass |
+| Static Assets (CSS) | Visit the Pomodoro page on the Heroku URL. | The custom background color loads, and the timer's numeric font size is large and correct. | Pass |
+| Migrations on deploy | Deploy new model migration (e.g. Idea) and run `heroku run python manage.py migrate`| Migration runs without error; new model usable in prod (no 500 on usage). | Pass |
+| CSRF protection | Attempt POST without CSRF token | Server returns 403; after adding CSRF header the request succeeds. | Pass |
+| Admin access | Login to /admin with staff user | Admin login succeeds; Blog, Tasks, Ideas models visible and editable. | Pass |
+| Error pages (403/404) | Visit a non-existent URL / force a permission error | Custom 404/403 pages render without exposing stack traces. | Pass |
+| Responsive checks (various pages) | Open Home, Blog, Task, Pomodoro on mobile, tablet, desktop | Layout adapts; readable text; buttons accessible; no horizontal scroll. | Pass |
+| Task Urgency Badges | 1. Create Task A: Due Date set to yesterday. 2. Create Task B: Due Date set to today. 3. Task A, B are NOT marked complete. | Task A shows the "OVERDUE" badge. Task B shows the "DUE TODAY" badge. | Pass |
+| Task Urgency Badges | Mark Task A (Overdue) as complete and refresh the task list. | The "OVERDUE" badge disappears; the task shows the "Done" badge and strikethrough styling. | Pass |
 
 ### Lighthouse Testing
 ### Validator Testing
@@ -95,14 +119,14 @@ The following tools and technologies were used to build this project:
 - **The custom `stlye.css` (incl. background, color vars, specific timer font size) was not loading on deployed Heroku app, resulting in a plain, unstyled look.**
   - Cause: The `staticfiles/` directory, which is generated by Django's `collectstatic` command and meant for production use by Whitenoise, was accidently tracked and commited to the Git repo. This conflict prevented the WhiteNoise middleware from running clean and correct static file collection during deployment.
   - Fix: The cachhed `staticfiles/` folder was removed from Git tracking (`git rm -r --cached staticfiles`), the directory was added to the `.gitignore` file to prevent future tracking, and a final push was performed to force Heroku to run a clean build and static file collection.
+- **Words breaking mid-letter inside Bootsrap cards**
+  - Cause: Browser default word splitting behaviour.
+  - Fix: Added CSS `word-break: normal; overflow-wrap: break-word;` and refined clamping styles.
 
 ### Unfixed Bugs
 - **Lexend font and primary color not consistently applying to all headings**
   - Cause: Potential CSS specificity conflicts with Bootstrap's default heading styles or specific card and container classes overriding the global font-family and primary color rule.
   - Status: Parked for future styling refactor; core functionality prioritized.
-- **Words breaking mid-letter inside Bootsrap cards**
-  - Cause: Browser default word splitting behaviour.
-  - Status: Tried adding CSS `word-break: normal; overflow-wrap: break-word;` and refined clamping styles. Bug improved, but not fixed yet. Parked for future adjustment and prioritized core functionality.
 
 ## Deployment
 ### Local Setup
@@ -112,6 +136,7 @@ The following tools and technologies were used to build this project:
 ## Credits
 ### Code
 ### Content & Media
+
 
 
 
