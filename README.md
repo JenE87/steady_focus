@@ -90,6 +90,43 @@ The following tools and technologies were used to build this project:
 - **Heroku**
 - **Whitenoise** (static file serving)
 
+## Development vs Production Databases
+Steady Focus uses **SQLite** for local development and **PostgreSQL** for production on Heroku.
+
+- **SQLite (development)**
+  Lightweight, file-based database suitable for rapid local development and testing.
+
+- **PostgreSQL (production)**
+  A robust, scalable relational database used by Heroku for production deployments.
+
+This setup follows Django best practices and allows fast iteration locally while ensuring reliability and data integrity in production.
+
+### Database Migrations (Local & Heroku)
+Because development and production use different database engines, migrations must be handled explicitly.
+
+**Local migrations (development):**
+`python manage.py makemigrations`
+`python manage.py migrate`
+Migration files must be committed to Git so they are available in production.
+
+**Applying migrations on Heroku (production):**
+Migrations can be run in two ways:
+
+**Option 1: Heroku CLI**
+`heroku run python manage.py migrate`
+
+**Option 2: Heroku Dashboard (used in this project)**
+1. Open the app in the Heroku Dashboard
+2. Navigate to **More (top right) → Run console**
+3. Run:
+`python manage.py migrate`
+This approach was used during development to apply the `Idea` model migration after deployment.
+
+### Important Notes for Developers
+- Migration files must always be committed — Heroku does not generate them automatically.
+- SQLite is more permissive than PostgreSQL; models that work locally may fail in production if constraints are incorrect.
+- The local SQLite database file (`db.sqlite3`) must **not** be committed to Git, and therefore included in the `.gitignore` file.
+
 ## Design & Layout
 Steady Focus follows a **minimalist, accessibility-first** design approach:
 
@@ -182,8 +219,77 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 
 ## Deployment
 ### Local Setup
+To run this project locally, follow the steps below.
+
+### Prerequisites
+- Python 3.12+
+- Git
+- A code editor (e.g. VS Code)
+
+**Steps**
+1. **Clone the repository of this project**
+2. **Create a virtual environment**
+   using venv and a Python version 3.12+ and check that your venv is running. If not, activate the virtual environment, using:
+   - Windows:
+     `venv\Scripts\activate` OR `.\.venv\Scripts\Activate.ps1`
+   - macOS/Linux:
+     `source venv/bin/activate`
+3. **Install dependencies**
+   by selecting ok during set up of the virtual environment of using
+   `pip install -r requirements.txt`
+   *(Note: If you add new dependencies locally, update the `requirements.txt` file using `pip freeze > requirements.txt` before pushing to GitHub.)*
+4. **Add `.venv` to the `.gitignore` file**
+   to ensure the virtual environemnt folder is excluded from version control.
+5. **Create an environment (`.env`) file**
+   in the project root based on `.env.example` and add your own values:
+   `SECRET_KEY=your-secret-key
+   DEBUG=True
+   ALLOWED_HOSTS=localhost,127.0.0.1
+   DATABASE_URL=sqlite:///db.sqlite3`
+6. **Run database migrations**
+   `python manage.py makemigrations`
+   `python manage.py migrate`
+7. **Create a superuser (optional, for admin access)**
+   `python manage.py createsuperuser`
+8. **Run the development server**
+   `python manage.py runserver`
+   The app will be available at:
+   `http:*//127.0.0.1:8000/*`
+
 ### Version Control
+This project uses **Git** for version control.
+
 ### Heroku Deployment
+This project is deployed using **Heroku** with **PostgreSQL** as the production database.
+
+## Deployment Steps
+1. **Create a Heroku app**
+   - Log in to Heroku
+   - Click New → Create new app
+   - Choose a unique app name and (your) region
+2. **Attach a PostgreSQL database and configure environment variables**
+   In the app dashboard, go to **Settings --> Config Vars** and add
+   - `DATABASE_URL` with the value of your PostgreSQL database
+   - `SECRET_KEY`
+3. **Connect to your GitHub Repository**
+   In the app dashboard, go to **Deploy**
+   - Select **GitHub** as *Deployment method*
+   - Under *App connected to GitHub* search for your repository and connect it
+   - *Enable automatic deploys (optional)* or deploy manually
+4. **Deploy the application**
+   - Trigger a deployment from the Heroku dashboard
+5. **Apply database migration**
+   After deployment, migrations must be run manually:
+   **Via Heroku Dashboard (used in this project):**
+   - Open the app in Heroku
+   - Click **More (top right) --> Run console**
+   - Run:
+     `python manage.py migrate`
+   **Or via Heroku CLI in your code editor#s terminal:**
+     `heroku run python manage.py migrate`
+6. **Collect static files**
+   Static files are handled automatically by **WhiteNoise** during deployment.
+   No manual `collectstatic` command is required.
 
 ## Credits
 ### Code
@@ -218,7 +324,6 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
-
 
 
 
