@@ -174,11 +174,11 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 - **Words breaking mid-letter inside Bootsrap cards**
   - Cause: Browser default word splitting behaviour.
   - Fix: Added CSS `word-break: normal; overflow-wrap: break-word;` and refined clamping styles.
+- **Lexend font and primary color not applying constantly**
+  - Cause: Bootstrap specificity issue
+  - Fix: Increased CSS specificity by targeting nested elements using their parent classes
 
 ### Unfixed Bugs
-- **Lexend font and primary color not applying constantly**
-  - Cause: Likely Bootstrap specificity issue
-  - Status: Parked for future styling refactor; core functionality prioritized.
 
 ## Deployment
 ### Local Setup
@@ -218,6 +218,7 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
