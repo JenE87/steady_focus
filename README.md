@@ -7,41 +7,28 @@ A lightweight productivity web application featuring a public blog, visitor idea
 Steady Focus aims to help users **plan and complete focused work sessions**, manage tasks, and optionally browse or contribute productivity ideas through a simple, distraction-free interface. The project is intentionally minimalist and neurodivergent-friendly, focusing on clarity, predictability, and ease of use.
 
 ## Features
-- **Public Blog**
-  - Clean card grid layout using Bootstrap 5.3
-  - Posts published by authenticated admin
-  - Dedicated blog homepage
+### Core Functionality
+- **Public Blog:**
+    * Clean card grid layout with pagination and dedicated detail views.
+    * Content published by authenticated admin users.
+- **Idea Submission:**
+    * Anyone (logged in or out) can submit productivity ideas via a dedicated form.
+    * Submissions are stored for admin review, promoting content curation.
+- **User Accounts (Auth):**
+    * Registration, login, and secure session management via **django-allauth**.
+- **Task Management (CRUD):**
+    * Private task lists (each user sees only their own).
+    * Full CRUD functionality for creating, updating, and deleting tasks.
+    * Quick-toggle completion directly from the task list.
+- **Pomodoro Timer:**
+    * Built-in client-side timer with audio notifications on cycle completion.
+    * Supports popular presets (25/5 and 50/10) and auto-switches between work/break cycles.
 
-- **Visitor Blog Submission Form**
-  - Anyone (logged in or out) can submit ideas
-  - Submissions stored in DB for admin review (no auto-publish)
-
-- **User Accounts**
-  - Registration, login, logout via **django-allauth**
-  - Password authentication
-
-- **Task Management (CRUD)**
-  - Private task lists (each user sees only their own tasks)
-  - Create, read, update, delete tasks
-  - Task urgency badges (Overdue / Due Today / Done)
-  - Mobile-friendly layout
-  - Toggle completion directly from task list
-
-- **Pomodoro Timer**
-  - 25/5 and 50/10 presets
-  - Auto-switch work/break cycles
-  - Audio notification on cycle completion
-  - Fully client-side (no backend dependencies)
-
-### Existing Features
-- Public blog with pagination
-- Detail views for posts
-- Blog idea submission form
-- Task filters and sorting options
-- Accessible colour choices & aria attributes
-- Custom 404/403 pages
-- Deployment via Heroku
-- Static file handling via Whitenoise
+### Advanced Features & UX Improvements
+- **Task Prioritization & Organization:** Users can filter tasks by completion status and sort by Due Date, Title, or Created Date.
+- **Status Visualization:** Tasks display clear urgency badges (**Overdue**, **Due Today**, **Done**).
+- **Accessibility (A11y):** Use of semantic HTML and `aria-label` attributes on all interactive elements (buttons, forms) and `aria-current` on navigation links.
+- **Error Handling:** Implemented custom, user-friendly `404 Not Found` and `403 Permission Denied` pages.
 
 ### Future Features (optional)
 - Editable Pomodoro presets stored per user
@@ -70,15 +57,18 @@ The following tools and technologies were used to build this project:
 - **CSS**
 - **JavaScript** (vanilla)
 
+### Frameworks & Libraries 
+- **Django 5.2.8** (primary web framework)
+- **Bootstrap 5.3** (responsive design and UI components)
+- **django-allauth** (for authentication)  
+- **django-summernote** (for rich text editor in admin)
+- **gunicorn** (WSGI HTTP Server for production)
+- **psycopg2** )PostgreSQL database adapter)
+
 ### Databases
 - **PostgreSQL** (production on Heroku)
 - **SQLite** (local development)
 
-### Frameworks & Libraries 
-- **Django 5.2.8**
-- **django-allauth** for authentication  
-- **django-summernote** for rich text in admin
-- 
 ### Tools & Services 
 - **VS Code** - IDE, code editor
 - **Python virtual Environment (venv)**
@@ -115,7 +105,7 @@ Migrations can be run in two ways:
 **Option 1: Heroku CLI**
 `heroku run python manage.py migrate`
 
-**Option 2: Heroku Dashboard (used in this project)**
+**Option 2: Heroku Dashboard**
 1. Open the app in the Heroku Dashboard
 2. Navigate to **More (top right) → Run console**
 3. Run:
@@ -201,7 +191,7 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
   - Fix: Wrapped DOM element assignments within a `DOMContentLoaded` event listener. 
 - **CSS hover effects causing visual confusion on detail views**
   - Cause: A global `.card:hover` transition was causing the entire task detail view to "lift", which distracted from functional buttons like "Edit" and "Delete".
-  - Fix: Added a `.no-hover-lift` class and updated the CSS selector to `:not(-no-hover-lift)` to exclude single-view cards from the animation. 
+  - Fix: Added a `.no-hover-lift` class and updated the CSS selector to `:not(.no-hover-lift)` to exclude single-view cards from the animation. 
 - **Django template tags failing inside external JavaScript file**
   - Cause: Attempting to use {% static %} tags directly inside pomodoro.js to define file paths, which Django template engine does not process for static files.
   - Fix: Integrated the audio element directly into the `pomodoro.html` template using Django tags and referenced the element in JavaScript via its ID.
@@ -262,7 +252,7 @@ This project uses **Git** for version control.
 ### Heroku Deployment
 This project is deployed using **Heroku** with **PostgreSQL** as the production database.
 
-## Deployment Steps
+**Deployment Steps**
 1. **Create a Heroku app**
    - Log in to Heroku
    - Click New → Create new app
@@ -280,7 +270,7 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
    - Trigger a deployment from the Heroku dashboard
 5. **Apply database migration**
    After deployment, migrations must be run manually:
-   **Via Heroku Dashboard (used in this project):**
+   **Via Heroku Dashboard**
    - Open the app in Heroku
    - Click **More (top right) --> Run console**
    - Run:
@@ -324,6 +314,7 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
