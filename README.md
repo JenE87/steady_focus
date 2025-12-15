@@ -171,73 +171,74 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 | WAVE® Evaluation Tool (Web Accessibility) | No major contrast/errors |
 | PEP8 Python Validator| Pass |
 
-*The deployed application was validated using the W3C Markup Validation Service.
+*Note: The deployed application was validated using the W3C Markup Validation Service.
 Initial validation errors were caused by multi-line anchor tags in Django templates, which the validator interpreted as malformed attributes.
 These were resolved by restructuring anchor elements so that all attributes appear on a single line, resulting in a successful validation.
 
 ### Fixed Bug
-1. **Server error (500) when submitting blog ideas in production**
+**1. Server error (500) when submitting blog ideas in production**
 - **Problem:** Submitting a blog idea worked locally but caused a server error on the deployed Heroku app.
 - **Cause:** The database migration for the `Idea` model had not been applied to the production PostgreSQL database.
 - **Fix:** The migration files were committed and database migrations were run manually on Heroku using the Heroku Dashboard console.
 - **Learning:** Local database changes must always be migrated separately in production. Heroku does not automatically apply migrations.
-2. **`{% static %}` template tag throwing errors**
+**2. `{% static %}` template tag throwing errors**
 - **Problem:** Some pages failed to load static files such as CSS and JavaScript.
 - **Cause:** The `{% load static %}` tag was missing at the top of affected templates.
 - **Fix:** Added `{% load static %}` directly below `{% extends "base.html" %}` in all templates that use static assets.
 - **Learning:** Django template tags must be explicitly loaded in each template where they are used.
-3. **`post_list()` got unexpected keyword argument template_name**
+**3. `post_list()` got unexpected keyword argument template_name**
 - **Problem:** The homepage caused an error when routing to the blog list view.
 - **Cause:** Function-based views were incorrectly passed parameters intended for class-based views.
 - **Fix:** Created a dedicated `home()` function-based view instead of reusing `post_list()`.
 - **Learning:** Function-based and class-based views use different configuration patterns and should not be mixed.
-4. **Navbar link not routing to homepage**
+**4. Navbar link not routing to homepage**
 - **Problem:** Clicking the site logo did not reliably route to the homepage.
 - **Cause:** The link pointed to / without a dedicated homepage view.
 - **Fix:** Created a named home URL and updated the navbar link to use `{% url 'home' %}`.
 - **Learning:** Named URLs are safer and clearer than hardcoded paths.
-5. **Pagination not working in function-based views**
+**5. Pagination not working in function-based views**
 - **Problem:** Pagination links displayed but did not work correctly.
 - **Cause:** Required pagination context variables were missing from the view or misspelled.
 - **Fix:** Added (corrected) `page_obj`, `is_paginated`, and consistent context names.
 - **Learning:** Pagination logic must be implemented explicitly when using function-based views.
-6. **Audio notification not playing when Pomodoro timer completed**
+**6. Audio notification not playing when Pomodoro timer completed**
 - **Problem:** The bell sound did not play when the timer reached zero.
 - **Cause:** The audio element ID in the HTML did not match the JavaScript reference.
 - **Fix:** Standardised the ID between the template and JavaScript file.
 - **Learning:** Front-end bugs often come from small mismatches between HTML and JavaScript.
-7. **Pomodoro timer crashing at zero**
+**7. Pomodoro timer crashing at zero**
 - **Problem:** The timer stopped working when it reached zero.
 - **Cause:** JavaScript attempted to access DOM elements before the page had fully loaded.
 - **Fix:** Wrapped DOM element selection inside a DOMContentLoaded event listener.
 - **Learning:** JavaScript that interacts with HTML elements must wait until the DOM is ready.
-8. **Django template tags failing inside external JavaScript files**
+**8. Django template tags failing inside external JavaScript files**
 - **Problem:** Static paths defined inside `pomodoro.js` caused errors.
 - **Cause:** Django does not process template tags inside static JavaScript files.
 - **Fix:** Moved the audio element into the HTML template and referenced it via its DOM ID.
 - **Learning:** Django template logic must remain in templates, not static files.
-9. **CSS hover effects causing confusion on detail pages**
+**9. CSS hover effects causing confusion on detail pages**
 - **Problem:** Entire detail views visually “lifted” on hover.
 - **Cause:** A global `.card:hover` rule applied to all cards, including single-item views.
 - **Fix:** Introduced a `.no-hover-lift` class to selectively disable hover animations.
 - **Learning:** Global CSS rules should be scoped carefully to avoid unintended side effects.
-10. **Custom CSS not loading on deployed site**
+**10. Custom CSS not loading on deployed site**
 - **Problem:** The deployed site appeared unstyled.
 - **Cause:** The `staticfiles/` directory (generated by `collectstatic`) was mistakenly committed to Git.
 - **Fix:** Removed the directory from version control, added it to `.gitignore`, and redeployed.
 - **Learning:** Generated production folders should never be committed.
-11. ''Words breaking mid-letter inside Bootstrap cards**
+**11. Words breaking mid-letter inside Bootstrap cards**
 - **Problem:** Long words split awkwardly across lines.
 - **Cause:** Default browser word-breaking behaviour.
 - **Fix:** Added CSS rules to prevent mid-word breaking and improve readability.
 - **Learning:** Small CSS adjustments can significantly improve accessibility and readability.
-12. **Inconsistent Lexend font and primary color across headings**
+**12. Inconsistent Lexend font and primary color across headings**
 - **Problem:** Some headings and card titles did not consistently display the Lexend font or the primary color.
 - **Cause:** Bootstrap’s default CSS had higher specificity on certain heading and card classes, which overrode global font-family and color rules.
 - **Fix:** Increased CSS specificity by targeting nested elements through their parent classes, ensuring the Lexend font and primary color are applied consistently.
 - **Learning:** CSS specificity can override global styles; carefully targeting elements ensures consistent branding and typography.
 
 ### Unfixed Bugs
+
 
 ## Deployment
 ### Local Setup
@@ -346,8 +347,4 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
-
-
-
-
 
