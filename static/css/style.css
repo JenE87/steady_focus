@@ -164,6 +164,7 @@ h1, h2, h3, h4, h5 {
 .card-text,
 .card-text p,
 .card-title a,
+.card-title h1,
 .intro-text h2 {
     color: var(--sf-primary) !important;
     font-family: var(--font-main) !important;
