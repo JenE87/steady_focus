@@ -38,9 +38,7 @@
 <body class="d-flex flex-column min-vh-100"> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold text-primary-emphasis" href="{% url 'home' %}">
-        Steady Focus
-      </a>
+      <a class="navbar-brand fw-bold text-primary-emphasis" href="{% url 'home' %}">Steady Focus</a>
       
       {% if user.is_authenticated %}
       <span class="d-lg-none d-flex align-items-center ms-auto me-2 small text-muted">
@@ -56,18 +54,15 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link {% if request.path|slice:':5' == '/blog' %}active{% endif %}"
-              href="{% url 'blog:post_list' %}"
-              {% if request.path|slice:':5' == '/blog' %}aria-current="page"{% endif %}>Blog</a></li>
+            <a class="nav-link {% if request.path|slice:':5' == '/blog' %}active{% endif %}" href="{% url 'blog:post_list' %}" {% if request.path|slice:':5' == '/blog' %}aria-current="page"{% endif %}>Blog</a>
+          </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.path == '/pomodoro/' %}active{% endif %}"
-              href="{% url 'pomodoro:pomodoro_home' %}"
-              {% if request.path == '/pomodoro/' %}aria-current="page"{% endif %}>Timer</a></li>
+            <a class="nav-link {% if request.path == '/pomodoro/' %}active{% endif %}" href="{% url 'pomodoro:pomodoro_home' %}" {% if request.path == '/pomodoro/' %}aria-current="page"{% endif %}>Timer</a>
+          </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link {% if request.path|slice:':6' == '/tasks' %}active{% endif %}"
-              href="{% url 'tasks:task_list' %}"
-              {% if request.path|slice:':6' == '/tasks' %}aria-current="page"{% endif %}>Tasks</a></li> 
+            <a class="nav-link {% if request.path|slice:':6' == '/tasks' %}active{% endif %}" href="{% url 'tasks:task_list' %}" {% if request.path|slice:':6' == '/tasks' %}aria-current="page"{% endif %}>Tasks</a>
+          </li> 
           {% endif %}
         </ul>
 
@@ -79,21 +74,15 @@
           <li class="nav-item">
             <form method="post" action="{% url 'account_logout' %}">
               {% csrf_token %}                
-              <button type="submit" class="btn btn-outline-secondary btn-sm rounded-pill px-3 mt-1" aria-label="Log out of your account">
-                Logout
-              </button>
+              <button type="submit" class="btn btn-outline-secondary btn-sm rounded-pill px-3 mt-1" aria-label="Log out of your account">Logout</button>
             </form>
           </li>
           {% else %}
           <li class="nav-item me-2">
-            <a class="btn btn-outline-primary btn-sm rounded-pill px-3 mb-2" href="{% url 'account_login' %}" aria-label="Log into your account">
-              Login
-            </a>
+            <a class="btn btn-outline-primary btn-sm rounded-pill px-3 mb-2" href="{% url 'account_login' %}" aria-label="Log into your account">Login</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-primary btn-sm rounded-pill px-3 mb-2" href="{% url 'account_signup' %}" aria-label="Create a new account">
-              Sign up
-            </a>
+            <a class="btn btn-primary btn-sm rounded-pill px-3 mb-2" href="{% url 'account_signup' %}" aria-label="Create a new account">Sign up</a>
           </li>
           {% endif %}
         </ul>
