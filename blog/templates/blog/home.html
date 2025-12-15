@@ -50,9 +50,9 @@
   <!-- Posts header (dynamic title on later pages) -->
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="h3 mb-3">
-      {% if page_obj.number == 1 %}Latest Posts{% else %}More Posts (page {{ page_obj.number }}){% endif %}
+      {% if page_obj.number == 1 %}Latest Posts{% else %}More Posts...{% endif %}
     </h2>
-    <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary" aria-label="Submit a blog idea">
+    <a href="{% url 'blog:idea_submit' %}" class="btn btn-outline-primary mb-2" aria-label="Submit a blog idea">
       <i class="fa-regular fa-lightbulb me-2"></i>Submit a Blog Idea
     </a>
   </div>
