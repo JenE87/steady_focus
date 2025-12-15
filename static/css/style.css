@@ -190,14 +190,6 @@ h1, h2, h3, h4, h5 {
     border-color: var(--sf-primary);
 }
 
-
-/* --- Timer --- */
-.timer-display-lg {
-    font-size: 6rem;
-    font-weight: 600;
-    color: var(--sf-primary); /* Timer numbers use primary color */
-}
-
 /* --- Task List Styles --- */
 .list-group-item {
     border: none; /* Remove Bootstrap default subtle border */
@@ -223,4 +215,24 @@ h1, h2, h3, h4, h5 {
 /* Ensure that Font Awesome icons stay inline with text (on small screens) */
 .fa-solid, .fa-regular {
     display: inline !important;
+}
+
+/* --- Timer --- */
+.timer-display-lg {
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--sf-primary); /* Timer numbers use primary color */
+}
+
+/* Responsive Timer Display */
+@media (max-width: 576px) {
+    .timer-display-lg {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .timer-display-lg {
+        font-size: 4rem;
+    }
 }
