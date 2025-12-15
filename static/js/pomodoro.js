@@ -1,3 +1,5 @@
+/* shint esversion: 6 */
+
 // Simple Pomodoro timer - works with pomodoro/templates/pomodoro.html
 
 // Settings (in seconds)
