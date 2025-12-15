@@ -15,7 +15,7 @@ def home(request):
     paginator = Paginator(posts_qs, 3)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
-    
+
     return render(request, 'blog/home.html', {
         'posts': page_obj.object_list,
         'page_obj': page_obj,

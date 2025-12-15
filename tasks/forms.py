@@ -10,9 +10,19 @@ class TaskForm(forms.ModelForm):
     """
     class Meta:
         model = Task
-        fields = ['title', 'description', 'estimated_minutes', 'due_date', 'completed']
+        fields = [
+            'title',
+            'description',
+            'estimated_minutes',
+            'due_date',
+            'completed'
+            ]
         widgets = {
-            'description': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Optional task details'}),
+            'description': forms.Textarea(attrs={
+                'rows': 3,
+                'placeholder':
+                'Optional task details'
+                }),
             'due_date': forms.DateInput(attrs={'type': 'date'}),
         }
 
@@ -32,5 +42,7 @@ class TaskForm(forms.ModelForm):
         value = self.cleaned_data.get('estimated_minutes')
         # Allow empty (none) but if provided must be > 0
         if value is not None and value <= 0:
-            raise forms.ValidationError("Estimated minutes must be greater than 0.")
+            raise forms.ValidationError(
+                "Estimated minutes must be greater than 0."
+                )
         return value
