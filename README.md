@@ -49,12 +49,12 @@ Columns:
 
 ## ERD & Wireframes
 ### ERD
-<img width="500" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" />
+<img width="700" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" />
 
 ### Wireframes
 #### Homepage (Mobile & Desktop)
-<img width="500" alt="Screenshot 2025-12-16 182626" src="https://github.com/user-attachments/assets/2386f753-b719-40de-a45d-fa0d6f8ac5f2" />
-<img width="500" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
+<img width="700" alt="Screenshot 2025-12-16 182626" src="https://github.com/user-attachments/assets/2386f753-b719-40de-a45d-fa0d6f8ac5f2" />
+<img width="700" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
 
 **Purpose**
 The homepage introduces *Steady Focus* and communicates its core goal: helping users find focus through mindful task management and timed work sessions, while offering access to a public productivity blog.
@@ -88,7 +88,7 @@ The homepage introduces *Steady Focus* and communicates its core goal: helping u
 - Responsive design ensures no loss of functionality on smaller screens.
 
 #### Homepage Authenticated State (Mobile)
-<img width="400" alt="Screenshot 2025-12-16 191034" src="https://github.com/user-attachments/assets/c54ae5b8-e63a-4ca5-ac4f-7c49086e4817" />
+<img width="700" alt="Screenshot 2025-12-16 191034" src="https://github.com/user-attachments/assets/c54ae5b8-e63a-4ca5-ac4f-7c49086e4817" />
 
 These wireframes illustrate how the homepage adapts once a user is logged in.
 
@@ -104,8 +104,8 @@ These wireframes illustrate how the homepage adapts once a user is logged in.
 - Menu toggle ensures functionality remains accessible on small screens without clutter
 
 #### The Blog List (Mobile & Desktop)
-<img width="500" alt="Screenshot 2025-12-16 191711" src="https://github.com/user-attachments/assets/9c3d3c8e-27fc-4835-b68d-9fcb876ba2fb" />
-<img width="500" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
+<img width="700" alt="Screenshot 2025-12-16 191711" src="https://github.com/user-attachments/assets/9c3d3c8e-27fc-4835-b68d-9fcb876ba2fb" />
+<img width="700" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
 
 **Purpose**
 **Layout & Responsiveness**
@@ -116,7 +116,7 @@ These wireframes illustrate how the homepage adapts once a user is logged in.
 **User Experience Considerations**
 
 #### The Blog Detail Page (Mobile & Desktop)
-<img width="500" alt="Screenshot 2025-12-16 192544" src="https://github.com/user-attachments/assets/470ed6b2-e640-41fe-93ac-354932c37e5d" />
+<img width="700" alt="Screenshot 2025-12-16 192544" src="https://github.com/user-attachments/assets/470ed6b2-e640-41fe-93ac-354932c37e5d" />
 
 **Purpose**
 **Layout & Responsiveness**
@@ -127,8 +127,8 @@ These wireframes illustrate how the homepage adapts once a user is logged in.
 **User Experience Considerations**
 
 #### Pomodoro Timer (Focus Timer) (Mobile & Desktop)
-<img width="500" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
-<img width="500" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
+<img width="600" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
+<img width="600" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
 
 **Purpose**
 **Layout & Responsiveness**
@@ -139,8 +139,8 @@ These wireframes illustrate how the homepage adapts once a user is logged in.
 **User Experience Considerations**
 
 #### Task List (Mobile & Desktop)
-<img width="1358" height="658" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
-<img width="946" height="586" alt="Screenshot 2025-12-16 191918" src="https://github.com/user-attachments/assets/d6d91fee-e054-4e76-8eb2-5530dd75d412" />
+<img width="700" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
+<img width="700" alt="Screenshot 2025-12-16 191918" src="https://github.com/user-attachments/assets/d6d91fee-e054-4e76-8eb2-5530dd75d412" />
 
 **Purpose**
 **Layout & Responsiveness**
@@ -470,6 +470,7 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
