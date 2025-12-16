@@ -48,7 +48,101 @@ Columns:
 **Backlog → In Progress → In Review/QA → Done**
 
 ## ERD & Wireframes
+### ERD
 <img width="1052" height="662" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" />
+
+### Wireframes
+#### Homepage (Mobile & Desktop)
+<img width="1522" height="1001" alt="Screenshot 2025-12-16 182626" src="https://github.com/user-attachments/assets/2386f753-b719-40de-a45d-fa0d6f8ac5f2" />
+<img width="1882" height="608" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
+**Purpose**
+The homepage introduces *Steady Focus* and communicates its core goal: helping users find focus through mindful task management and timed work sessions, while offering access to a public productivity blog.
+
+**Layout & Responsiveness**
+- **Mobile**
+   - Content is stacked vertically for easy scrolling.
+   - Primary call-to-action buttons (*Log In*, *Sign Up*, *Browse Blog*) are placed prominently near the top.
+   - Blog posts appear as full-width cards to maximise readability on small screens.
+- **Desktop**
+   - Layout expands horizontally to make better use of screen space.
+   - Blog posts are displayed in a multi-column grid for quick scanning.
+   - Navigation links and authentication buttons are always visible in the top bar.
+
+**Key Elements**
+- Clear hero section with tagline and short explanatory text.
+- Prominent call-to-action buttons to guide new users.
+- *Latest Posts* section showcasing recent blog content.
+- Blog cards include:
+   - Title
+   - Publication date
+   - Short excerpt (or first 140 characters)
+   - *Read more* button
+- Pagination controls allow users to browse older posts.
+- *Submit a Blog Idea* option encourages community participation.
+
+**User Experience Considerations**
+- Consistent visual hierarchy across devices reduces cognitive load.
+- Minimalist layout supports focus and readability.
+- Navigation remains predictable and accessible on both mobile and desktop.
+- Responsive design ensures no loss of functionality on smaller screens.
+
+#### Homepage Authenticated State (Mobile)
+<img width="823" height="390" alt="Screenshot 2025-12-16 191034" src="https://github.com/user-attachments/assets/c54ae5b8-e63a-4ca5-ac4f-7c49086e4817" />
+These wireframes illustrate how the homepage adapts once a user is logged in.
+
+**Key Differences from Guest View**
+- A success message confirms successful login, providing clear user feedback.
+- Call-to-action buttons change to user-relevant actions (*View Tasks*, *Use Timer*, *Browse Blog*).
+- The navigation menu expands to include authenticated-only links (*Tasks*, *Logout*).
+- The username is displayed in the header to reinforce user context.
+
+**Design Rationale**
+- Immediate feedback builds user confidence after authentication.
+- Navigation prioritises core productivity features for returning users.
+- Menu toggle ensures functionality remains accessible on small screens without clutter
+
+#### The Blog List (Mobile & Desktop)
+<img width="1167" height="755" alt="Screenshot 2025-12-16 191711" src="https://github.com/user-attachments/assets/9c3d3c8e-27fc-4835-b68d-9fcb876ba2fb" />
+<img width="1874" height="595" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
+**Purpose**
+**Layout & Responsiveness**
+- **Mobile**
+   - 
+- **Desktop**
+**Key Elements**
+**User Experience Considerations**
+
+#### The Blog Detail Page (Mobile & Desktop)
+<img width="1370" height="669" alt="Screenshot 2025-12-16 192544" src="https://github.com/user-attachments/assets/470ed6b2-e640-41fe-93ac-354932c37e5d" />
+**Purpose**
+**Layout & Responsiveness**
+- **Mobile**
+   - 
+- **Desktop**
+**Key Elements**
+**User Experience Considerations**
+
+#### Pomodoro Timer (Focus Timer) (Mobile & Desktop)
+<img width="1355" height="670" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
+<img width="980" height="597" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
+**Purpose**
+**Layout & Responsiveness**
+- **Mobile**
+   - 
+- **Desktop**
+**Key Elements**
+**User Experience Considerations**
+
+#### Task List (Mobile & Desktop)
+<img width="1358" height="658" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
+<img width="946" height="586" alt="Screenshot 2025-12-16 191918" src="https://github.com/user-attachments/assets/d6d91fee-e054-4e76-8eb2-5530dd75d412" />
+**Purpose**
+**Layout & Responsiveness**
+- **Mobile**
+   - 
+- **Desktop**
+**Key Elements**
+**User Experience Considerations**
 
 ## Technologies
 The following tools and technologies were used to build this project:
@@ -235,6 +329,7 @@ These were resolved by restructuring anchor elements so that all attributes appe
 - **Cause:** The `staticfiles/` directory (generated by `collectstatic`) was mistakenly committed to Git.
 - **Fix:** Removed the directory from version control, added it to `.gitignore`, and redeployed.
 - **Learning:** Generated production folders should never be committed.
+
 **11. Words breaking mid-letter inside Bootstrap cards**
 - **Problem:** Long words split awkwardly across lines.
 - **Cause:** Default browser word-breaking behaviour.
@@ -246,6 +341,18 @@ These were resolved by restructuring anchor elements so that all attributes appe
 - **Cause:** Bootstrap’s default CSS had higher specificity on certain heading and card classes, which overrode global font-family and color rules.
 - **Fix:** Increased CSS specificity by targeting nested elements through their parent classes, ensuring the Lexend font and primary color are applied consistently.
 - **Learning:** CSS specificity can override global styles; carefully targeting elements ensures consistent branding and typography.
+
+**13. Timer display wrapping onto two lines on very small screens**
+- **Problem:** On very small mobile devies (≈ 2360px width), the Pomodoro timer digits wrapped onto two lines.
+- **Cause:** The timer font size (`6rem`) was too large fofr narrow viewports.
+- **Fix:** Added responsive CSS media queries to reduce the timer font size on smaller screens.
+- **Learning:** Large typographic elements should be tested on the smallest common viewport sizes to ensure readability and layout stability.
+
+**14. Filter and sort icons misaligned on desktop task list**
+- **Problem:** Filter and sort icon appeared above their labels on desktop screens.
+- **Cause:** A global CSS rule forced Font Awesome icons to `display: inline`, breaking alignment inside flex containers.
+- **Fix:** Removed the global icon display override, allowing Font Awesome's inline-block behavior.
+- **Learning:** Global CSS overrides can have unintended side effects across breakpoints and layouts.
 
 ### Unfixed Bugs
 
@@ -357,5 +464,6 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
