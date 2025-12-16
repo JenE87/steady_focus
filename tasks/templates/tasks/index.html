@@ -21,11 +21,11 @@
             
             <!-- Filter dropdown -->
             <div class="col-auto d-flex align-items-center">
-                <span class="fw-bold small text-muted text-uppercase me-2">
+                <span class="filter-label fw-bold small text-muted text-uppercase me-2">
                     <i class="fa-solid fa-filter me-1"></i>
                     <span class="visually-hidden">Filter tasks by</span>Filter:
                 </span>
-                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()" aria-label="Task Status Filter">
+                <select name="status" class="form-select form-select-sm me-3" onchange="this.form.submit()" aria-label="Task Status Filter">
                     <option value="" {% if not current_status %}selected{% endif %}>All Tasks</option>
                     <option value="open" {% if current_status == 'open' %}selected{% endif %}>Open</option>
                     <option value="completed" {% if current_status == 'completed' %}selected{% endif %}>Completed</option>
@@ -34,7 +34,7 @@
 
             <!-- Sort dropdown -->
             <div class="col-auto ms-md-3 d-flex align-items-center">
-                <span class="fw-bold small text-muted text-uppercase me-2">
+                <span class="sort-label fw-bold small text-muted text-uppercase me-2">
                     <i class="fa-solid fa-arrow-down-short-wide me-1"></i>
                     <span class="visually-hidden">Sort tasks by</span>Sort:
                 </span>

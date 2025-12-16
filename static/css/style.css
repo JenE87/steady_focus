@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5 {
     border-color: var(--sf-primary);
 }
 
-/* --- Task List Styles --- */
+/* --- Task List --- */
 .list-group-item {
     border: none; /* Remove Bootstrap default subtle border */
     border-bottom: 2px solid #ddd; /* Use a slightly stronger, visible light gray line for separation */
@@ -211,10 +211,12 @@ h1, h2, h3, h4, h5 {
     color: #31689b !important; /* Slightly darker primary color on hover */
 }
 
-/* --- Font Awesome Icons --- */
-/* Ensure that Font Awesome icons stay inline with text (on small screens) */
-.fa-solid, .fa-regular {
-    display: inline !important;
+.filter-label,
+.sort-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    line-height: 1;
 }
 
 /* --- Timer --- */
