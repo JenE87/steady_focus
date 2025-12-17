@@ -3,7 +3,16 @@ from .models import Idea
 
 
 class IdeaForm(forms.ModelForm):
+    """
+    Form class for users to submit productivity blog ideas.
+
+    This form allows visitors (authenticated or not) to suggest
+    blog topics, which are stored for later admin review.
+    """
     class Meta:
+        """
+        Specifiy the django model and order of the fields.
+        """
         model = Idea
         fields = ['title', 'body', 'submitter_name', 'submitter_email']
         widgets = {

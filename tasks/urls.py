@@ -1,3 +1,10 @@
+"""
+URL configuration for the tasks app.
+
+Defines routes for task listing, creation, detail views,
+editing, deletion, and completion toggling.
+"""
+
 from django.urls import path
 from . import views
 

@@ -10,6 +10,31 @@ from .models import Task
 
 
 class TaskList(LoginRequiredMixin, ListView):
+    """
+    Display a paginated list of user tasks.
+
+    Returns all instances of :model:`tasks.Task` owned by the
+    currently authenticated user. The list supports filtering
+    by completion status and sorting by due date, title, or
+    creation date.
+
+    **Context**
+    
+    ``tasks``
+        A queryset of :model:`tasks.Task` instances.
+    ``page_obj``
+        A :class:`django.core.paginator.Page` instance.
+    ``today``
+        The current date.
+    ``current_status``
+        The active status filter.
+    ``current_sort``
+        The active sorting option.
+    
+    **Template**
+
+    :template:`tasks/index.html`
+    """
     model = Task
     template_name = "tasks/index.html"
     context_object_name = "tasks"
@@ -17,6 +42,9 @@ class TaskList(LoginRequiredMixin, ListView):
     
     
     def get_queryset(self):
+        """
+        Filter and sort the task list for the current user.
+        """
         qs = Task.objects.filter(owner=self.request.user)
 
         # --- Filtering ---
@@ -42,6 +70,9 @@ class TaskList(LoginRequiredMixin, ListView):
         return qs
 
     def get_context_data(self, **kwargs):
+        """
+        Add additional context data for filtering and display.
+        """
         ctx = super().get_context_data(**kwargs)
         ctx["today"] = timezone.now().date()
         ctx["current_status"] = self.request.GET.get("status", "")
@@ -50,6 +81,21 @@ class TaskList(LoginRequiredMixin, ListView):
 
 
 def task_detail(request, pk):
+    """
+    Display an individual task.
+
+    Returns a single instance of :model:`tasks.Task` owned by
+    the currently authenticated user.
+
+    **Context**
+    
+    ``task``
+        An instance of :model:`tasks.Task`
+    
+    **Template**
+
+    :template:`tasks/task_detail.html`
+    """
     # Use pk (primary key) to fetch the task
     task = get_object_or_404(Task, pk=pk)
 
@@ -67,6 +113,21 @@ def task_detail(request, pk):
 
 @login_required
 def task_create(request):
+    """
+    Create a new task.
+
+    Allows authenticated users to create a new instance of
+    :model:`tasks.Task` using :form:`tasks.TaskForm`.
+
+    **Context**
+
+    ``form``
+        An instance of :form:`tasks.TaskForm`.
+    
+    **Template**
+
+    :template:`tasks/task_form.html`
+    """
     if request.method == "POST":
         form = TaskForm(request.POST)
         if form.is_valid():
@@ -85,8 +146,20 @@ def task_create(request):
 @login_required
 def task_edit(request, pk):
     """
-    POST > validate and save (owner remains)
-    GET > show task form with instance populated (owner must match)
+    Edit an existing task.
+
+    Allows the task owner to update an instance of 
+    :model:`tasks.Task` using :form:`tasks.TaskForm`.
+
+    **Context**
+    ``task``
+        An instance of :model:`tasks.Task`.
+    ``form``
+        An instance of :form:`tasks.TaskForm`.
+
+    **Template**
+
+    :template:`tasks/task_form.html`
     """
     task = get_object_or_404(Task, pk=pk)
 
@@ -116,8 +189,18 @@ def task_edit(request, pk):
 @login_required
 def task_delete(request, pk):
     """
-    POST > delete and redirect
-    GET > show confirmation page
+    Delete an existing task.
+
+    Allows the task owner to delete an instance of
+    :model:`tasks.Task` after confirmation.
+
+    **Context**
+
+    ``task``
+        An instance of :model:`tasks.Task`.
+    
+    **Template**
+    :template:`tasks/task_confirm_delete.html`
     """
     task = get_object_or_404(Task, pk=pk)
 
@@ -141,9 +224,12 @@ def task_delete(request, pk):
 @require_POST
 def task_toggle_complete(request, pk):
     """"
-    Toggle the completed flag for a task (POST only).
-    Only the task owner can toggle.
-    Redirect to task list.
+    Toggle the completion status of a task.
+
+    Allows the task owner to mark a :model:`tasks.Task` as
+    completed or incomplete via a POST request.
+
+    Redirects back to the task list view.
     """
     task = get_object_or_404(Task, pk=pk)
 

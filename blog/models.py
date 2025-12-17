@@ -3,10 +3,16 @@ from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
 
-# Create your models here.
-
 
 class Post(models.Model):
+    """
+    Stores a single blog post entry.
+
+    This model represents both published blog posts and
+    user-submitted article ideas. Published posts are visible
+    on the public blog, while submissions require an admin review 
+    before publication.
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     body = models.TextField()
@@ -26,22 +32,26 @@ class Post(models.Model):
         ]
 
     def save(self, *args, **kwargs):
-        # Simple slug auto-generation if slug is not provided
+        """
+        Automatically generate a unique slug and publication date.
+
+        - Generates a URL-friendly slug from the title if none is provided.
+        - Appends a timestamp suffic if a slug collision occurs.
+        - Automatically sets the published date when a post is published.
+        """
         if not self.slug and self.title:
             base_slug = slugify(self.title)[:185]    # Leave room for suffix
             slug_candidate = base_slug
-            # If a slug collision exists, append a timestamp suffix
             if (
                 Post.objects.
                 filter(slug=slug_candidate)
                 .exclude(pk=self.pk)
                 .exists()
             ):
-                timestamp = time.strftime("%Y%m%d%H%M")    # e.g. 20251120 1023
+                timestamp = time.strftime("%Y%m%d%H%M")    # e.g. 202511201023
                 slug_candidate = f"{base_slug}-{timestamp}"
             self.slug = slug_candidate
 
-        # Auto-set published_at when selecting published
         if self.published and not self.published_at:
             self.published_at = timezone.now()
 
@@ -54,6 +64,13 @@ class Post(models.Model):
 
 
 class Idea(models.Model):
+    """
+    Stores a single blog idea submission.
+
+    This model allows users to submit blog topic suggestions
+    or article drafts, which can later be reviewed and converted
+    into published blog posts.
+    """
     title = models.CharField(max_length=200)
     body = models.TextField()
     submitter_name = models.CharField(max_length=200, blank=True)

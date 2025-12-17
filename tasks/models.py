@@ -2,8 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-# Create your models here.
 class Task(models.Model):
+    """
+    Stores a single task entry related to :model:`auth.User`.
+
+    This model represents an individual to-do item created by a user.
+    Tasks can optionally include a description, due date, and estimated 
+    completion time, and support completion tracking.
+    """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)

@@ -1,3 +1,9 @@
+"""
+URL configuration for the pomodoro app.
+
+Provides access to the public Pomodoro timer page.
+"""
+
 from django.urls import path
 from . import views
 

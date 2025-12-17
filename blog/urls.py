@@ -1,3 +1,10 @@
+"""
+URL configuration for the blog app.
+
+Maps blog-related URLs to their corresponding view functions,
+including post listing, post detail views, and idea submission.
+"""
+
 from django.urls import path
 from . import views
 
