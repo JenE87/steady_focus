@@ -47,12 +47,11 @@ https://github.com/users/JenE87/projects/10
 Columns:
 **Backlog → In Progress → In Review/QA → Done**
 
-## ERD & Wireframes
-### ERD
+## ERD
 <img width="700" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" />
 
-### Wireframes
-#### Homepage (Mobile & Desktop)
+## Wireframes
+### Homepage (Mobile & Desktop)
 <img width="700" alt="Screenshot 2025-12-16 182626" src="https://github.com/user-attachments/assets/2386f753-b719-40de-a45d-fa0d6f8ac5f2" />
 <img width="700" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
 
@@ -87,7 +86,7 @@ The homepage introduces *Steady Focus* and communicates its core goal: helping u
 - Navigation remains predictable and accessible on both mobile and desktop.
 - Responsive design ensures no loss of functionality on smaller screens.
 
-#### Homepage Authenticated State (Mobile)
+### Homepage Authenticated State (Mobile)
 <img width="700" alt="Screenshot 2025-12-16 191034" src="https://github.com/user-attachments/assets/c54ae5b8-e63a-4ca5-ac4f-7c49086e4817" />
 
 These wireframes illustrate how the homepage adapts once a user is logged in.
@@ -103,52 +102,124 @@ These wireframes illustrate how the homepage adapts once a user is logged in.
 - Navigation prioritises core productivity features for returning users.
 - Menu toggle ensures functionality remains accessible on small screens without clutter
 
-#### The Blog List (Mobile & Desktop)
+### The Blog (Post List) (Mobile & Desktop)
 <img width="700" alt="Screenshot 2025-12-16 191711" src="https://github.com/user-attachments/assets/9c3d3c8e-27fc-4835-b68d-9fcb876ba2fb" />
 <img width="700" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
 
 **Purpose**
+The Blog page provides users with access to short, focused articles related to productivity, focus, and task management. It is designed to encourage reading, exploration, and optional community contribution while keeping the interface clean and distraction-free.
+
 **Layout & Responsiveness**
 - **Mobile**
-   - 
+   - Blog posts are displayed in a single-column layout per page to prioritise readability on small screens.
+   - Each post appears as a stacked card, allowing users to scroll through the content.
+   - Pagination controls are placed at the bottom of the page for easy thumb access.
+   - The navigation collapses into a hamburger menu to save space.
 - **Desktop**
-**Key Elements**
-**User Experience Considerations**
+   - Blog posts are displayed in a responsive grid layout, showing multiple cards per row.
+   - The wider layout improves content discoverability while maintaining visual clarity.
+   - Pagination remains at the bottom to provide a consistent browsing experience across devices.
+   - The primary navigation remains visible at the top of the page.
 
-#### The Blog Detail Page (Mobile & Desktop)
+**Key Elements**
+- **Blog Post Cards:** Each card displays the post title, publication date, a short excerpt (or the first 140 characters if no excerpt exists), and a clear *Read Article* button.
+- **Pagination Controls:** Allow users to navigate between multiple pages of blog posts.
+- **Submit a Blog Idea Button:** Encourages user engagement by allowing visitors to propose blog topics, while keeping final publishing admin-controlled.
+- **Header and Footer:** Provide consistent navigation and branding across the site.
+
+**User Experience Considerations**
+- The card-based design makes content easy to scan and reduces cognitive load.
+- Clear call-to-action buttons help users understand what actions are available at a glance.
+- The layout avoids unnecessary imagery to support focus and accessibility.
+- Consistent placement of navigation and pagination elements helps users build familiarity with the interface.
+- The design supports both casual browsing and intentional reading without overwhelming the user.
+
+### The Blog Detail Page (Mobile & Desktop)
 <img width="700" alt="Screenshot 2025-12-16 192544" src="https://github.com/user-attachments/assets/470ed6b2-e640-41fe-93ac-354932c37e5d" />
 
 **Purpose**
+The Blog Post Detail page is the final destination for readers. Its primary goal is to provide a calm, highly readable environment for consuming long-form content. By removing sidebar distractions and grid elements, the focus remains entirely on the article.
+
 **Layout & Responsiveness**
 - **Mobile**
-   - 
+   - The article body fills the screen width with comfortable side margins to ensure text doesn't feel cramped.
+   - Font sizes are optimized for mobile reading to reduce eye strain.
+   - Navigation elements (*Back to Blog*, *Read more articles*) are scaled for easy touch interaction.
 - **Desktop**
+   - The content is contained within a centered, narrow container (max-width). This prevents line lengths from becoming too long.
+   - Significant "white space" is utilized on the left and right to minimize peripheral distraction.
+   - The header and footer remain consistent with the rest of the site to maintain a sense of place.
 **Key Elements**
-**User Experience Considerations**
+- **Breadcrumb Navigation:** A prominent *Back to Blog* link at the top allows users to easily return to the list without using the browser's back button.
+- **Article Header:** Clearly displays the full Post Title and Publication Date to provide immediate context.
+- **Content Area:** Supports full-length text, maintaining the minimalist, text-only aesthetic to support neurodivergent focus.
+- **Call-to-Action:** An "Enjoyed this read?" section at the bottom provides a clear path forward, encouraging users to discover more content via a *Read more articles* button.
 
-#### Pomodoro Timer (Focus Timer) (Mobile & Desktop)
+**User Experience Considerations**
+- By using a single-column layout without sidebars or pictures, the page minimizes "visual noise," making it easier for users with neurodiversity or sensory sensitivities to finish the article.
+- The placement of the *Back* link and the bottom call-to-action creates a logical flow — entry, consumption, and next steps.
+- Large, clear headings and high-contrast text ensure the content is accessible to users with visual impairments or those using screen readers.
+- The design emphasizes line spacing and paragraph breaks to make the text scannable and less intimidating.
+
+### Pomodoro Timer (Focus Timer) (Mobile & Desktop)
 <img width="600" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
 <img width="600" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
 
 **Purpose**
+The Pomodoro Timer is a core execution tool of the application. It provides a highly visual, easy-to-use interface that guides users through structured work and break intervals. Its primary goal is to minimize friction in starting a focus session and to provide clear feedback on the current state of a cycle.
+
 **Layout & Responsiveness**
 - **Mobile**
-   - 
+   - The interface is centered and vertically oriented, ensuring the countdown digits are the largest and most prominent element on the screen.
+   - Control buttons (*Start/Pause/Resume*, *Reset*) are designed as large, thumb-friendly tap targets.
+   - Preset interval toggles are placed within easy reach at the bottom of the timer container.
 - **Desktop**
-**Key Elements**
-**User Experience Considerations**
+   - The timer is housed within a clean, centered card to maintain focus and prevent the interface from feeling "lost" on wide screens.
+   - The layout remains consistent with the mobile version to provide a seamless transition for users moving between devices.
+   - Hover states are implemented on all interactive buttons to provide clear visual cues for mouse users.
 
-#### Task List (Mobile & Desktop)
+**Key Elements**
+- **Dynamic Mode Indicator:** A clear status bar at the top of the timer visually distinguishes between "Work" and "Break" sessions through text and color changes.
+- **Countdown Display:** A large, high-contrast digital clock that updates in real-time.
+- **Contextual Controls:** The primary action button dynamically changes its label and icon (*Start*, *Pause*, *Resume*) based on the current timer state.
+- **Interval Presets:** Quick-access buttons for standard Pomodoro cycles (25/5 minutes) and extended sessions (50/10 minutes) allow for instant setup.
+- **Audio Feedback Toggle:** A status icon informs the user that audio notifications are enabled, ensuring they know when a cycle has ended without having to watch the clock.
+
+**User Experience Considerations**
+- The use of distinct colors for Work and Break modes provides instant cognitive feedback, allowing users to understand their current session type at a glance.
+- The "one-tap" start philosophy reduces the mental energy required to begin a task, which is particularly beneficial for users prone to procrastination.
+- Automatic switching between work and break sessions reduces the need for user intervention, maintaining the "flow" of a focus session.
+- The large, clear numerals and absence of unnecessary animations or flashing elements prevent sensory overload while keeping the user informed of the remaining time.
+
+### Task List (Mobile & Desktop)
 <img width="700" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
 <img width="700" alt="Screenshot 2025-12-16 191918" src="https://github.com/user-attachments/assets/d6d91fee-e054-4e76-8eb2-5530dd75d412" />
 
 **Purpose**
+The Task List is the command center for user productivity. It allows users to externalize their mental to-do list into a structured, manageable format. The primary goal is to provide a clear overview of upcoming commitments while offering useful tools to filter and prioritize work without overwhelming the user.
+
 **Layout & Responsiveness**
 - **Mobile**
-   - 
+   - Task items are stacked vertically to prioritize readability on narrow screens.
+   - A dedicated "Task Detail" view ensures that long descriptions don't clutter the main list, maintaining a clean interface for quick scanning.
+   - Action buttons (*Done*, *Edit*, *Delete*) are spaced appropriately to prevent accidental taps.
 - **Desktop**
+   - The layout utilizes the wider horizontal space to show task titles, due dates, urgency badges, and time estimates in a single, scannable row.
+   - Filtering and sorting dropdowns are placed prominently above the list for immediate access.
+   - Consistent padding and row heights create a professional, "dashboard" feel that supports long-term use.
+
 **Key Elements**
+- **Urgency Badges:** Highly visible color-coded tags (OVERDUE in red, DUE TODAY in yellow) provide immediate visual cues for prioritization.
+- **Filter & Sort Toolbar:** Allows users to narrow down their view (e.g., "Incomplete Tasks") and reorder them by due date or title.
+- **Quick-Action Toggles:** The *Done* button allows users to update task status directly from the list view.
+- **Task Detail View (Mobile):** Offers a focused space for "Optional task descriptions" and status metadata, keeping the primary list lightweight.
+- **"Add New Task" call-to-action**: A prominent, consistent button placed at the top of the list ensures users can quickly capture new ideas as they pop up.
+- 
 **User Experience Considerations**
+- By marking overdue or upcoming tasks, the app makes the decision-making process ("What should I do next?") much easier for the user.
+- Visual changes (strikethroughs and *Done* badges) when a task is completed reinforce the user's sense of progress.
+- High-contrast text and clear icons for editing and deleting ensure the task manager remains usable for everyone.
+- The inclusion of a *Back to Task List* link on detail pages ensures the user does not feels lost.
 
 ## Technologies
 The following tools and technologies were used to build this project:
@@ -164,7 +235,7 @@ The following tools and technologies were used to build this project:
 - **django-allauth** (for authentication)  
 - **django-summernote** (for rich text editor in admin)
 - **gunicorn** (WSGI HTTP Server for production)
-- **psycopg2** )PostgreSQL database adapter)
+- **psycopg2** (PostgreSQL database adapter)
 
 ### Databases
 - **PostgreSQL** (production on Heroku)
@@ -173,9 +244,10 @@ The following tools and technologies were used to build this project:
 ### Tools & Services 
 - **VS Code** - IDE, code editor
 - **Python virtual Environment (venv)**
+- **Balsamiq** (wireframe creation)
 - **SmartDraw / LucidChart** (ERD creation)
-- **LanguageTool** - for grammar, spelling, paraphrasing support in code strings and documentation
-- **ChatGPT + Google Gemini** - for planning, debugging, and documentation support
+- **LanguageTool** (grammar, spelling, paraphrasing support in code strings and documentation)
+- **ChatGPT + Google Gemini** (planning, debugging, and documentation support)
 
 ### Deployment & Hosting
 - **Heroku**
@@ -470,6 +542,7 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
