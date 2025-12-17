@@ -214,7 +214,7 @@ The Task List is the command center for user productivity. It allows users to ex
 - **Quick-Action Toggles:** The *Done* button allows users to update task status directly from the list view.
 - **Task Detail View (Mobile):** Offers a focused space for "Optional task descriptions" and status metadata, keeping the primary list lightweight.
 - **"Add New Task" call-to-action**: A prominent, consistent button placed at the top of the list ensures users can quickly capture new ideas as they pop up.
-- 
+
 **User Experience Considerations**
 - By marking overdue or upcoming tasks, the app makes the decision-making process ("What should I do next?") much easier for the user.
 - Visual changes (strikethroughs and *Done* badges) when a task is completed reinforce the user's sense of progress.
@@ -542,6 +542,7 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
