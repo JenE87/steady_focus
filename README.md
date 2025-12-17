@@ -187,7 +187,7 @@ The Pomodoro Timer is a core execution tool of the application. It provides a hi
 
 **User Experience Considerations**
 - The use of distinct colors for Work and Break modes provides instant cognitive feedback, allowing users to understand their current session type at a glance.
-- The "one-tap" start philosophy reduces the mental energy required to begin a task, which is particularly beneficial for users prone to procrastination.
+- The "one-tap" start philosophy lowers the mental barrier to beginning a task, which is particularly beneficial for users prone to procrastination.
 - Automatic switching between work and break sessions reduces the need for user intervention, maintaining the "flow" of a focus session.
 - The large, clear numerals and absence of unnecessary animations or flashing elements prevent sensory overload while keeping the user informed of the remaining time.
 
@@ -219,7 +219,7 @@ The Task List is the command center for user productivity. It allows users to ex
 - By marking overdue or upcoming tasks, the app makes the decision-making process ("What should I do next?") much easier for the user.
 - Visual changes (strikethroughs and *Done* badges) when a task is completed reinforce the user's sense of progress.
 - High-contrast text and clear icons for editing and deleting ensure the task manager remains usable for everyone.
-- The inclusion of a *Back to Task List* link on detail pages ensures the user does not feels lost.
+- The inclusion of a *Back to Task List* link on detail pages ensures the user does not feel lost.
 
 ## Technologies
 The following tools and technologies were used to build this project:
@@ -300,7 +300,7 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 - Lexend font for improved readability (ongoing refinement)
 - Reduced hover animations on detail pages for neurodivergent comfort
 - Semantic HTML + aria labels where beneficial
-- 
+
 ## Testing
 ### Manual Testing
 | Feature                           | Test Input                     | Expected Result               | Pass/Fail |
@@ -421,8 +421,8 @@ These were resolved by restructuring anchor elements so that all attributes appe
 - **Learning:** CSS specificity can override global styles; carefully targeting elements ensures consistent branding and typography.
 
 **13. Timer display wrapping onto two lines on very small screens**
-- **Problem:** On very small mobile devies (≈ 2360px width), the Pomodoro timer digits wrapped onto two lines.
-- **Cause:** The timer font size (`6rem`) was too large fofr narrow viewports.
+- **Problem:** On very small mobile devices (≈ 360px width), the Pomodoro timer digits wrapped onto two lines.
+- **Cause:** The timer font size (`6rem`) was too large for narrow viewports.
 - **Fix:** Added responsive CSS media queries to reduce the timer font size on smaller screens.
 - **Learning:** Large typographic elements should be tested on the smallest common viewport sizes to ensure readability and layout stability.
 
@@ -433,7 +433,7 @@ These were resolved by restructuring anchor elements so that all attributes appe
 - **Learning:** Global CSS overrides can have unintended side effects across breakpoints and layouts.
 
 ### Unfixed Bugs
-
+No known unfixed bugs at the time of submission.
 
 ## Deployment
 ### Local Setup
@@ -453,11 +453,11 @@ To run this project locally, follow the steps below.
    - macOS/Linux:
      `source venv/bin/activate`
 3. **Install dependencies**
-   by selecting ok during set up of the virtual environment of using
+   by selecting OK during set up of the virtual environment, or by using
    `pip install -r requirements.txt`
    *(Note: If you add new dependencies locally, update the `requirements.txt` file using `pip freeze > requirements.txt` before pushing to GitHub.)*
 4. **Add `.venv` to the `.gitignore` file**
-   to ensure the virtual environemnt folder is excluded from version control.
+   to ensure the virtual environment folder is excluded from version control.
 5. **Create an environment (`.env`) file**
    in the project root based on `.env.example` and add your own values:
    `SECRET_KEY=your-secret-key
@@ -503,7 +503,7 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
    - Click **More (top right) --> Run console**
    - Run:
      `python manage.py migrate`
-   **Or via Heroku CLI in your code editor#s terminal:**
+   **Or via Heroku CLI in your code editor's terminal:**
      `heroku run python manage.py migrate`
 6. **Collect static files**
    Static files are handled automatically by **WhiteNoise** during deployment.
@@ -512,8 +512,8 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 ## Credits
 ### Code
 - Code Institute LMS course materials
-- Antionio Melé (2025). *Django 5 By Example*. Packt Publishing Ltd.
-- [Django documentation](https://docs.djangoproject.com/en/6.0/) 
+- Antonio Melé (2025). *Django 5 By Example*. Packt Publishing Ltd.
+- [Django documentation](https://docs.djangoproject.com/) 
 - [Bootstrap 5 documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 - [Python.org](https://www.python.org/)
 - [W3 schools](https://www.w3schools.com/)
@@ -542,6 +542,7 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
