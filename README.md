@@ -4,6 +4,8 @@ A lightweight productivity web application featuring a public blog, visitor idea
 [Live Demo](https://steady-focus-bc183b5c3b1f.herokuapp.com/) <br>
 [Repository](https://github.com/JenE87/steady_focus)
 
+<img width="900" alt="Screenshot 2025-12-18 134451" src="https://github.com/user-attachments/assets/d4150184-ff4e-4c21-8690-e92257309967" />
+
 ## Project purpose
 Steady Focus aims to help users **plan and complete focused work sessions**, manage tasks, and optionally browse or contribute productivity ideas through a simple, distraction-free interface. The project is intentionally minimalist and neurodivergent-friendly, focusing on clarity, predictability, and ease of use.
 
@@ -12,18 +14,42 @@ Steady Focus aims to help users **plan and complete focused work sessions**, man
 - **Public Blog:**
     * Clean card grid layout with pagination and dedicated detail views.
     * Content published by authenticated admin users.
+<img width="600" alt="Screenshot 2025-12-18 134656" src="https://github.com/user-attachments/assets/55b2262f-c47c-47bd-b46d-d3c97caf4a33" />
+<img width="600" alt="Screenshot 2025-12-18 134749" src="https://github.com/user-attachments/assets/6c0249c6-4bfd-4ff2-acec-cd763ecb2ac3" />
+
 - **Idea Submission:**
     * Anyone (logged in or out) can submit productivity ideas via a dedicated form.
     * Submissions are stored for admin review, promoting content curation.
+<img width="600" alt="Screenshot 2025-12-18 134830" src="https://github.com/user-attachments/assets/cdd6e186-928f-4784-a144-def9dd1f4704" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/0b7849ba-ef1a-4140-8278-a2b19be5c38b" />
+
 - **User Accounts (Auth):**
     * Registration, login, and secure session management via **django-allauth**.
+<img width="370" height="400" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/251ec382-4860-4f94-9fc6-0b43b9510e75" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/54b27b1b-909b-47bf-af67-a9a07f9b2d06" />
+<img height="500" alt="Screenshot 2025-12-18 135247" src="https://github.com/user-attachments/assets/7b8a3cf5-c93c-48f1-be8c-da61a5df9267" />
+<img width="800" alt="Screenshot 2025-12-18 135353" src="https://github.com/user-attachments/assets/f223bce0-8dbc-425a-8102-bd0f2cc3ce02" />
+
 - **Task Management (CRUD):**
     * Private task lists (each user sees only their own).
     * Full CRUD functionality for creating, updating, and deleting tasks.
     * Quick-toggle completion directly from the task list.
+<img width="700" alt="Screenshot 2025-12-18 135423" src="https://github.com/user-attachments/assets/d1ae811e-2e9d-4309-96dc-0da06df11180" />
+<img width="700" alt="Screenshot 2025-12-18 135541" src="https://github.com/user-attachments/assets/03488ee8-4c87-47cc-b035-07e29dd4ad6c" />
+<img width="700" alt="Screenshot 2025-12-18 135822" src="https://github.com/user-attachments/assets/975c03a8-2828-4b33-94e6-e15c42361566" />
+<img width="700" alt="Screenshot 2025-12-18 135908" src="https://github.com/user-attachments/assets/9597f177-01da-47b8-91a9-ac662f885c97" />
+<img width="700" alt="Screenshot 2025-12-18 135945" src="https://github.com/user-attachments/assets/6b0802ba-75fd-471c-91d3-acdcdee93e0a" />
+<img width="700" alt="Screenshot 2025-12-18 140200" src="https://github.com/user-attachments/assets/25e4aff0-48f9-4102-9f0b-1e3b2819e802" />
+<img width="700" alt="Screenshot 2025-12-18 140022" src="https://github.com/user-attachments/assets/dab57ac7-af41-443e-a70c-684c69d04139" />
+
 - **Pomodoro Timer:**
     * Built-in client-side timer with audio notifications on cycle completion.
     * Supports popular presets (25/5 and 50/10) and auto-switches between work/break cycles.
+<img width="700" alt="Screenshot 2025-12-18 140335" src="https://github.com/user-attachments/assets/5577e880-0152-417a-8d0f-e0074e1b36f4" />
+<img width="700" alt="Screenshot 2025-12-18 140405" src="https://github.com/user-attachments/assets/55896b12-bbdf-434b-8bb5-1b1694b9e065" />
+<img width="700" alt="Screenshot 2025-12-18 140439" src="https://github.com/user-attachments/assets/8b64befa-52e1-4864-bb23-efe24229b939" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/7ba7e3cd-46d6-4080-a06f-4be27b0e43c7" />
 
 ### Advanced Features & UX Improvements
 - **Task Prioritization & Organization:** Users can filter tasks by completion status and sort by Due Date, Title, or Created Date.
@@ -306,7 +332,7 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 The application is fully responsive across desktop, tablet and mobile devices.
 
 Below is a composite screenshot demonstrating responsiveness at multiple breakpoints:
-<img width="700" alt="Screenshot 2025-12-18 133107" src="https://github.com/user-attachments/assets/7707144f-cddd-47a8-9174-12e74ed17cd3" />
+<img width="800" alt="Screenshot 2025-12-18 133107" src="https://github.com/user-attachments/assets/7707144f-cddd-47a8-9174-12e74ed17cd3" />
 
 ## Testing
 ### Manual Testing
@@ -555,6 +581,7 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
