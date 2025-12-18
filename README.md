@@ -21,11 +21,11 @@ Steady Focus aims to help users **plan and complete focused work sessions**, man
     * Anyone (logged in or out) can submit productivity ideas via a dedicated form.
     * Submissions are stored for admin review, promoting content curation.
 <img width="600" alt="Screenshot 2025-12-18 134830" src="https://github.com/user-attachments/assets/cdd6e186-928f-4784-a144-def9dd1f4704" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/0b7849ba-ef1a-4140-8278-a2b19be5c38b" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/0b7849ba-ef1a-4140-8278-a2b19be5c38b" />
 
 - **User Accounts (Auth):**
     * Registration, login, and secure session management via **django-allauth**.
-<img width="370" height="400" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/251ec382-4860-4f94-9fc6-0b43b9510e75" />
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/54b27b1b-909b-47bf-af67-a9a07f9b2d06" />
 <img height="500" alt="Screenshot 2025-12-18 135247" src="https://github.com/user-attachments/assets/7b8a3cf5-c93c-48f1-be8c-da61a5df9267" />
@@ -42,14 +42,16 @@ Steady Focus aims to help users **plan and complete focused work sessions**, man
 <img width="700" alt="Screenshot 2025-12-18 135945" src="https://github.com/user-attachments/assets/6b0802ba-75fd-471c-91d3-acdcdee93e0a" />
 <img width="700" alt="Screenshot 2025-12-18 140200" src="https://github.com/user-attachments/assets/25e4aff0-48f9-4102-9f0b-1e3b2819e802" />
 <img width="700" alt="Screenshot 2025-12-18 140022" src="https://github.com/user-attachments/assets/dab57ac7-af41-443e-a70c-684c69d04139" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/c198893d-9038-4cee-8586-e15315c3d057" />
+
 
 - **Pomodoro Timer:**
     * Built-in client-side timer with audio notifications on cycle completion.
     * Supports popular presets (25/5 and 50/10) and auto-switches between work/break cycles.
-<img width="700" alt="Screenshot 2025-12-18 140335" src="https://github.com/user-attachments/assets/5577e880-0152-417a-8d0f-e0074e1b36f4" />
-<img width="700" alt="Screenshot 2025-12-18 140405" src="https://github.com/user-attachments/assets/55896b12-bbdf-434b-8bb5-1b1694b9e065" />
-<img width="700" alt="Screenshot 2025-12-18 140439" src="https://github.com/user-attachments/assets/8b64befa-52e1-4864-bb23-efe24229b939" />
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/7ba7e3cd-46d6-4080-a06f-4be27b0e43c7" />
+<img width="600" alt="Screenshot 2025-12-18 140335" src="https://github.com/user-attachments/assets/5577e880-0152-417a-8d0f-e0074e1b36f4" />
+<img width="600" alt="Screenshot 2025-12-18 140405" src="https://github.com/user-attachments/assets/55896b12-bbdf-434b-8bb5-1b1694b9e065" />
+<img width="600" alt="Screenshot 2025-12-18 140439" src="https://github.com/user-attachments/assets/8b64befa-52e1-4864-bb23-efe24229b939" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/7ba7e3cd-46d6-4080-a06f-4be27b0e43c7" />
 
 ### Advanced Features & UX Improvements
 - **Task Prioritization & Organization:** Users can filter tasks by completion status and sort by Due Date, Title, or Created Date.
@@ -581,6 +583,7 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
