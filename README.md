@@ -39,13 +39,14 @@ Steady Focus aims to help users **plan and complete focused work sessions**, man
 - Implement Focus Session model that connects task to the Pomodoro timer
 
 ## User Stories
-A GitHub Kanban board captures all user stories and tracks the development progress using an Agile approach.
+A [GitHub Kanban board](https://github.com/users/JenE87/projects/10) captures all user stories and tracks the development progress using an Agile approach. To follow the project's progress the colums *Backlog*, *In Progress*, *In Review/QA* and *Done* were used.
 
-Project Board:
-https://github.com/users/JenE87/projects/10
+Screenshots of the GitHub Project Board are included to show how user stories were managed throughout development. These were taken at different stages of the project (approximately one per week) and illustrate how tasks moved from Backlog through In Progress and Review to Done, reflecting an iterative and organised development process.
 
-Columns:
-**Backlog → In Progress → In Review/QA → Done**
+<img width="600" alt="GitHub Projects_Status Quo Week 1" src="https://github.com/user-attachments/assets/115cfc6a-629e-4114-97c7-8d7fe1ebb723" />
+<img width="600" alt="GitHub Projects_Status Quo Week 2" src="https://github.com/user-attachments/assets/1863c413-09a3-41ad-a3ed-094e461b4acb" />
+<img width="600" alt="GitHub Projects_Status Quo Week 3" src="https://github.com/user-attachments/assets/811c02a5-5745-4654-af8f-b58f1c80d28a" />
+<img width="600" alt="GitHub Projects_Status Quo Week 4" src="https://github.com/user-attachments/assets/01cd9773-d527-4510-b455-296b007329e1" />
 
 ## ERD
 <img width="700" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" />
@@ -301,8 +302,16 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 - Reduced hover animations on detail pages for neurodivergent comfort
 - Semantic HTML + aria labels where beneficial
 
+### Responsive Design
+The application is fully responsive across desktop, tablet and mobile devices.
+
+Below is a composite screenshot demonstrating responsiveness at multiple breakpoints:
+<img width="700" alt="Screenshot 2025-12-18 133107" src="https://github.com/user-attachments/assets/7707144f-cddd-47a8-9174-12e74ed17cd3" />
+
 ## Testing
 ### Manual Testing
+The application was tested manually across all major features, user roles, and edge cases. Testing focused on functionality, usability, responsiveness, accessibility, and data integrity in both development and production environments. All critical user journeys were verified, and identified issues were documented and resolved.
+
 | Feature                           | Test Input                     | Expected Result               | Pass/Fail |
 |-----------------------------------|--------------------------------|-------------------------------|-----------|
 | Signup / Registration | Go to Sign up, fill valid email + password, submit | New user account created, redirected / logged in, user appears in admin/users. | Pass |
@@ -509,6 +518,10 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
    Static files are handled automatically by **WhiteNoise** during deployment.
    No manual `collectstatic` command is required.
 
+## Security
+### Security & Debug Configuration
+During local development, `DEBUG` is set to `True` via a `.env` file. In the deployed production environment, the `DEBUG` environment variable is not defined, causing Django to fall back to `False` by default, ensuring debug mode is disabled in production. Sensitive configuration values such as SECRET_KEY, DATABASE_URL, and DEBUG are stored in environment variables and are never committed to the GitHub repository. The .env file used for local development is included in .gitignore. When deployed, the application does not expose sensitive error information, and instead displays user-friendly custom error pages (e.g. 404 and 403), ensuring production security best practices are followed.
+
 ## Credits
 ### Code
 - Code Institute LMS course materials
@@ -542,6 +555,7 @@ This project is deployed using **Heroku** with **PostgreSQL** as the production 
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
