@@ -326,7 +326,7 @@ Steady Focus follows a **minimalist, accessibility-first** design approach:
 - Bootstrap 5.3 grid structure
 - Cards with consistent height for polished visual rhythm
 - No post images to avoid distraction
-- Lexend font for improved readability (ongoing refinement)
+- Lexend font for improved readability
 - Reduced hover animations on detail pages for neurodivergent comfort
 - Semantic HTML + aria labels where beneficial
 
@@ -371,6 +371,10 @@ The application was tested manually across all major features, user roles, and e
 | Task Urgency Badges | Mark Task A (Overdue) as complete and refresh the task list. | The "OVERDUE" badge disappears; the task shows the "Done" badge and strikethrough styling. | Pass |
 
 ### Lighthouse Testing
+Perfomance, Accessibility, Best Practises and SEO were analyzed through Lighthouse. All categories show good results. 
+Descriptive aria-labels were added to repeated links to improve accessibility and SEO. <br>
+<img width="367" height="118" alt="image" src="https://github.com/user-attachments/assets/227aa2d0-0084-4295-a9c8-0ee002807727" />
+
 ### Validator Testing
 | Validator | Result |
 |----------|--------|
@@ -583,14 +587,3 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
-
-
-
-
-
-
-
-
-
-
-
