@@ -29,7 +29,7 @@
             {{ post.excerpt|default:post.body|truncatechars_html:140|safe }}
           </div>
                 
-          <a class="btn btn-primary btn-sm align-self-start stretched-link" href="{% url 'blog:post_detail' post.slug %}" aria-label="Read the entire article">
+          <a class="btn btn-primary btn-sm align-self-start stretched-link" href="{% url 'blog:post_detail' post.slug %}" aria-label="Read blog post: {{ post.title }}">
             Read Article
           </a>
         </div>
