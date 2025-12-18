@@ -79,7 +79,7 @@
               </div>
 
               <div class="mt-auto">
-                <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm" aria-label="Read the entire article">
+                <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm" aria-label="Read blog post: {{ post.title }}">
                   Read more
                 </a>
               </div>
