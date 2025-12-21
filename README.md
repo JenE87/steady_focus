@@ -342,7 +342,9 @@ The application was tested manually across all major features, user roles, and e
 
 | Feature                           | Test Input                     | Expected Result               | Pass/Fail |
 |-----------------------------------|--------------------------------|-------------------------------|-----------|
-| Signup / Registration | Go to Sign up, fill valid email + password, submit | New user account created, redirected / logged in, user appears in admin/users. | Pass |
+| Signup / Registration | Go to Sign up, fill valid username + password, submit | New user account created, redirected / logged in, user appears in admin/users. | Pass |
+| Signup / Registration | Go to Sign up, fill in username, that already exists  | Error is shown that a user with that username already exists | Pass |
+| Signup / Registration | Go to Sign up, fill in username + password, that does not meet password criteria  | Error is shown why password was rejected | Pass |
 | Login / Logout        | Login with valid creds, then click Logout | Login succeeds; navbar updates to show username; logout returns to public state. | Pass |
 | Protected routes (Tasks) | Access `/tasks/` while not logged in | Redirected to login page (or 403 if configured) | Pass |
 | Blog list (home & /blog/) | Visit homepage and /blog/ | Latest posts display, excerpts visible, cards render; pagination present when > page size. | Pass |
@@ -587,3 +589,4 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
