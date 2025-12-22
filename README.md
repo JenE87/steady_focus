@@ -1,7 +1,7 @@
 # Steady Focus
 A lightweight productivity web application featuring a public blog, visitor idea submissions, personal task management, and a built-in Pomodoro timer.
 
-[Live Demo](https://steady-focus-bc183b5c3b1f.herokuapp.com/) <br>
+[Live Demo](https://steady-focus-bc183b5c3b1f.herokuapp.com/)<br/>
 [Repository](https://github.com/JenE87/steady_focus)
 
 <img width="900" alt="Screenshot 2025-12-18 134451" src="https://github.com/user-attachments/assets/d4150184-ff4e-4c21-8690-e92257309967" />
@@ -25,11 +25,11 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
 
 - **User Accounts (Auth):**
     * Registration, login, and secure session management via **django-allauth**.
+<img height="400" alt="Screenshot 2025-12-18 135247" src="https://github.com/user-attachments/assets/7b8a3cf5-c93c-48f1-be8c-da61a5df9267" />
+<img width="700" alt="Screenshot 2025-12-18 135353" src="https://github.com/user-attachments/assets/f223bce0-8dbc-425a-8102-bd0f2cc3ce02" />
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/251ec382-4860-4f94-9fc6-0b43b9510e75" />
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/54b27b1b-909b-47bf-af67-a9a07f9b2d06" />
-<img height="400" alt="Screenshot 2025-12-18 135247" src="https://github.com/user-attachments/assets/7b8a3cf5-c93c-48f1-be8c-da61a5df9267" />
-<img width="700" alt="Screenshot 2025-12-18 135353" src="https://github.com/user-attachments/assets/f223bce0-8dbc-425a-8102-bd0f2cc3ce02" />
 
 - **Task Management (CRUD):**
     * Private task lists (each user sees only their own).
@@ -77,8 +77,7 @@ Screenshots of the GitHub Project Board are included to show how user stories we
 <img width="600" alt="GitHub Projects_Status Quo Week 4" src="https://github.com/user-attachments/assets/01cd9773-d527-4510-b455-296b007329e1" />
 
 ## ERD
-<img width="700" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" />
-<br>
+<img width="700" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" /><br/>
 The Task model is linked to the User model via a ForeignKey to ensure tasks are user-specific.
 
 ## Wireframes
@@ -86,7 +85,7 @@ The Task model is linked to the User model via a ForeignKey to ensure tasks are 
 <img width="700" alt="Screenshot 2025-12-16 182626" src="https://github.com/user-attachments/assets/2386f753-b719-40de-a45d-fa0d6f8ac5f2" />
 <img width="700" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
 
-**Purpose**
+**Purpose**  
 The homepage introduces *Steady Focus* and communicates its core goal: helping users find focus through mindful task management and timed work sessions, while offering access to a public productivity blog.
 
 **Layout & Responsiveness**
@@ -137,7 +136,7 @@ These wireframes illustrate how the homepage adapts once a user is logged in.
 <img width="700" alt="Screenshot 2025-12-16 191711" src="https://github.com/user-attachments/assets/9c3d3c8e-27fc-4835-b68d-9fcb876ba2fb" />
 <img width="700" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
 
-**Purpose**
+**Purpose**  
 The Blog page provides users with access to short, focused articles related to productivity, focus, and task management. It is designed to encourage reading, exploration, and optional community contribution while keeping the interface clean and distraction-free.
 
 **Layout & Responsiveness**
@@ -168,7 +167,7 @@ The Blog page provides users with access to short, focused articles related to p
 ### The Blog Detail Page (Mobile & Desktop)
 <img width="700" alt="Screenshot 2025-12-16 192544" src="https://github.com/user-attachments/assets/470ed6b2-e640-41fe-93ac-354932c37e5d" />
 
-**Purpose**
+**Purpose**  
 The Blog Post Detail page is the final destination for readers. Its primary goal is to provide a calm, highly readable environment for consuming long-form content. By removing sidebar distractions and grid elements, the focus remains entirely on the article.
 
 **Layout & Responsiveness**
@@ -196,7 +195,7 @@ The Blog Post Detail page is the final destination for readers. Its primary goal
 <img width="600" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
 <img width="600" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
 
-**Purpose**
+**Purpose**  
 The Pomodoro Timer is a core execution tool of the application. It provides a highly visual, easy-to-use interface that guides users through structured work and break intervals. Its primary goal is to minimize friction in starting a focus session and to provide clear feedback on the current state of a cycle.
 
 **Layout & Responsiveness**
@@ -226,7 +225,7 @@ The Pomodoro Timer is a core execution tool of the application. It provides a hi
 <img width="700" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
 <img width="700" alt="Screenshot 2025-12-16 191918" src="https://github.com/user-attachments/assets/d6d91fee-e054-4e76-8eb2-5530dd75d412" />
 
-**Purpose**
+**Purpose**  
 The Task List is the command center for user productivity. It allows users to externalize their mental to-do list into a structured, manageable format. The primary goal is to provide a clear overview of upcoming commitments while offering useful tools to filter and prioritize work without overwhelming the user.
 
 **Layout & Responsiveness**
@@ -376,7 +375,7 @@ The application was tested manually across all major features, user roles, and e
 
 ### Lighthouse Testing
 Perfomance, Accessibility, Best Practises and SEO were analyzed through Lighthouse. All categories show good results. 
-Descriptive aria-labels were added to repeated links to improve accessibility and SEO. <br>
+Descriptive aria-labels were added to repeated links to improve accessibility and SEO.<br/>
 <img width="367" height="118" alt="image" src="https://github.com/user-attachments/assets/227aa2d0-0084-4295-a9c8-0ee002807727" />
 
 ### Validator Testing
@@ -481,7 +480,7 @@ These were resolved by restructuring anchor elements so that all attributes appe
 No known unfixed bugs at the time of submission.
 
 ### Known Issues
-**Typography consistency**
+**Typography consistency**  
 The application uses the Lexend font for improved readability. Due to Bootstrap's default styling, some elements required targeted CSS overrides to ensure the font is applied consistently. This was handled intentionally using `!important` declarations. The site displays correctly, and no functional or accessibility issues are caused by this decision.
 
 ## Deployment
@@ -595,5 +594,6 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
