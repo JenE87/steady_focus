@@ -7,7 +7,7 @@ A lightweight productivity web application featuring a public blog, visitor idea
 <img width="900" alt="Screenshot 2025-12-18 134451" src="https://github.com/user-attachments/assets/d4150184-ff4e-4c21-8690-e92257309967" />
 
 ## Project purpose
-Steady Focus aims to help users **plan and complete focused work sessions**, manage tasks, and optionally browse or contribute productivity ideas through a simple, distraction-free interface. The project is intentionally minimalist and neurodivergent-friendly, focusing on clarity, predictability, and ease of use.
+Steady Focus aims to help users plan and complete focused work sessions, manage tasks, and optionally browse or contribute productivity ideas through a simple, distraction-free interface. The project is intentionally minimalist and neurodivergent-friendly, focusing on clarity, predictability, and ease of use.
 
 ## Features
 ### Core Functionality
@@ -26,10 +26,10 @@ Steady Focus aims to help users **plan and complete focused work sessions**, man
 - **User Accounts (Auth):**
     * Registration, login, and secure session management via **django-allauth**.
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/251ec382-4860-4f94-9fc6-0b43b9510e75" />
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/54b27b1b-909b-47bf-af67-a9a07f9b2d06" />
-<img height="500" alt="Screenshot 2025-12-18 135247" src="https://github.com/user-attachments/assets/7b8a3cf5-c93c-48f1-be8c-da61a5df9267" />
-<img width="800" alt="Screenshot 2025-12-18 135353" src="https://github.com/user-attachments/assets/f223bce0-8dbc-425a-8102-bd0f2cc3ce02" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/251ec382-4860-4f94-9fc6-0b43b9510e75" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/54b27b1b-909b-47bf-af67-a9a07f9b2d06" />
+<img height="400" alt="Screenshot 2025-12-18 135247" src="https://github.com/user-attachments/assets/7b8a3cf5-c93c-48f1-be8c-da61a5df9267" />
+<img width="700" alt="Screenshot 2025-12-18 135353" src="https://github.com/user-attachments/assets/f223bce0-8dbc-425a-8102-bd0f2cc3ce02" />
 
 - **Task Management (CRUD):**
     * Private task lists (each user sees only their own).
@@ -48,10 +48,10 @@ Steady Focus aims to help users **plan and complete focused work sessions**, man
 - **Pomodoro Timer:**
     * Built-in client-side timer with audio notifications on cycle completion.
     * Supports popular presets (25/5 and 50/10) and auto-switches between work/break cycles.
-<img width="600" alt="Screenshot 2025-12-18 140335" src="https://github.com/user-attachments/assets/5577e880-0152-417a-8d0f-e0074e1b36f4" />
-<img width="600" alt="Screenshot 2025-12-18 140405" src="https://github.com/user-attachments/assets/55896b12-bbdf-434b-8bb5-1b1694b9e065" />
-<img width="600" alt="Screenshot 2025-12-18 140439" src="https://github.com/user-attachments/assets/8b64befa-52e1-4864-bb23-efe24229b939" />
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/7ba7e3cd-46d6-4080-a06f-4be27b0e43c7" />
+<img width="500" alt="Screenshot 2025-12-18 140335" src="https://github.com/user-attachments/assets/5577e880-0152-417a-8d0f-e0074e1b36f4" />
+<img width="500" alt="Screenshot 2025-12-18 140405" src="https://github.com/user-attachments/assets/55896b12-bbdf-434b-8bb5-1b1694b9e065" />
+<img width="500" alt="Screenshot 2025-12-18 140439" src="https://github.com/user-attachments/assets/8b64befa-52e1-4864-bb23-efe24229b939" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/7ba7e3cd-46d6-4080-a06f-4be27b0e43c7" />
 
 ### Advanced Features & UX Improvements
 - **Task Prioritization & Organization:** Users can filter tasks by completion status and sort by Due Date, Title, or Created Date.
@@ -78,6 +78,8 @@ Screenshots of the GitHub Project Board are included to show how user stories we
 
 ## ERD
 <img width="700" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" />
+<br>
+The Task model is linked to the User model via a ForeignKey to ensure tasks are user-specific.
 
 ## Wireframes
 ### Homepage (Mobile & Desktop)
@@ -478,6 +480,10 @@ These were resolved by restructuring anchor elements so that all attributes appe
 ### Unfixed Bugs
 No known unfixed bugs at the time of submission.
 
+### Known Issues
+**Typography consistency**
+The application uses the Lexend font for improved readability. Due to Bootstrap's default styling, some elements required targeted CSS overrides to ensure the font is applied consistently. This was handled intentionally using `!important` declarations. The site displays correctly, and no functional or accessibility issues are caused by this decision.
+
 ## Deployment
 ### Local Setup
 To run this project locally, follow the steps below.
@@ -589,4 +595,5 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
