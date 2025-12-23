@@ -14,18 +14,18 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
 - **Public Blog:**
     * Clean card grid layout with pagination and dedicated detail views.
     * Content published by authenticated admin users.
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/f789c046-3299-4d87-983a-1271bd5521e0" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/132aecca-9c5e-402d-902f-6af93b131d86" /><br/>
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/bb2cb5c8-a63c-49ae-b88f-4c5bc30f6f34" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/12a20e6c-4777-4e96-b3f6-4204647f30ee" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/f789c046-3299-4d87-983a-1271bd5521e0" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/132aecca-9c5e-402d-902f-6af93b131d86" />
 <img width="500" alt="Screenshot 2025-12-18 134656" src="https://github.com/user-attachments/assets/55b2262f-c47c-47bd-b46d-d3c97caf4a33" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/bb2cb5c8-a63c-49ae-b88f-4c5bc30f6f34" />
+<img height="280" alt="image" src="https://github.com/user-attachments/assets/12a20e6c-4777-4e96-b3f6-4204647f30ee" />
 <img width="500" alt="Screenshot 2025-12-18 134749" src="https://github.com/user-attachments/assets/6c0249c6-4bfd-4ff2-acec-cd763ecb2ac3" />
 
 - **Idea Submission:**
     * Anyone (logged in or out) can submit productivity ideas via a dedicated form.
     * Submissions are stored for admin review, promoting content curation.
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/ce86a0d6-7944-4fb9-b330-aa4ae40460e6" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/0b7849ba-ef1a-4140-8278-a2b19be5c38b" />
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/0b7849ba-ef1a-4140-8278-a2b19be5c38b" />
 
 - **User Accounts (Auth):**
     * Registration, login, and secure task management via **django-allauth**.
@@ -42,21 +42,20 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/c4c86dd9-827d-4ad7-9c7e-065957979433" />
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/83d23f80-e3ac-4899-9909-4097c4faaac6" />
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/4e447193-f48c-4cc1-a988-075d2e672055" />
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/6ddd7838-683a-4c6b-abd5-70029d8f58a2" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/649d197f-c1ee-4b68-a4af-0a0cb5bdb38f" />
-<img width="600" alt="Screenshot 2025-12-18 135541" src="https://github.com/user-attachments/assets/03488ee8-4c87-47cc-b035-07e29dd4ad6c" />
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/506da30a-560a-46db-8164-de8d40580cbb" />
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/bc8f766b-cca8-4e08-a9f0-b227bb874c22" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/134ee66a-5045-4d9e-9c8f-75a9a13b593e" />
-<img width="350" alt="image" src="https://github.com/user-attachments/assets/06b5e7e1-5226-449e-9da6-e80fc9290154" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/649d197f-c1ee-4b68-a4af-0a0cb5bdb38f" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/6ddd7838-683a-4c6b-abd5-70029d8f58a2" />
+<img height="250" alt="image" src="https://github.com/user-attachments/assets/134ee66a-5045-4d9e-9c8f-75a9a13b593e" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/06b5e7e1-5226-449e-9da6-e80fc9290154" />
 
 - **Pomodoro Timer:**
     * Built-in client-side timer with audio notifications on cycle completion.
     * Supports popular presets (25/5 and 50/10) and auto-switches between work/break cycles.
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/2ceb359e-cdf2-45a1-9d81-ac5b554057da" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/47e006b8-7ac1-4327-9e25-f883e4268aad" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/3939c690-f96c-43a6-8ca6-281682d2f764" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/de6292c2-4833-4c7c-b796-fb87dd194403" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/2ceb359e-cdf2-45a1-9d81-ac5b554057da" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/47e006b8-7ac1-4327-9e25-f883e4268aad" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/3939c690-f96c-43a6-8ca6-281682d2f764" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/de6292c2-4833-4c7c-b796-fb87dd194403" />
 <img width="400" alt="Screenshot 2025-12-18 140335" src="https://github.com/user-attachments/assets/5577e880-0152-417a-8d0f-e0074e1b36f4" />
 <img width="400" alt="Screenshot 2025-12-18 140405" src="https://github.com/user-attachments/assets/55896b12-bbdf-434b-8bb5-1b1694b9e065" />
 <img width="400" alt="Screenshot 2025-12-18 140439" src="https://github.com/user-attachments/assets/8b64befa-52e1-4864-bb23-efe24229b939" />
@@ -86,7 +85,7 @@ Screenshots of the GitHub Project Board are included to show how user stories we
 <img width="600" alt="GitHub Projects_Status Quo Week 4" src="https://github.com/user-attachments/assets/01cd9773-d527-4510-b455-296b007329e1" />
 
 ## ERD
-<img width="700" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" /><br/>
+<img width="750" alt="ERD_Steady_Focus" src="https://github.com/user-attachments/assets/376b48c2-6d84-4a05-84f4-176891baafa1" /><br/>
 The Task model is linked to the User model via a ForeignKey to ensure tasks are user-specific.
 
 ## Wireframes
@@ -201,8 +200,8 @@ The Blog Post Detail page is the final destination for readers. Its primary goal
 - The design emphasizes line spacing and paragraph breaks to make the text scannable and less intimidating.
 
 ### Pomodoro Timer (Focus Timer) (Mobile & Desktop)
-<img width="500" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
-<img width="500" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
+<img width="600" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
+<img width="400" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
 
 **Purpose**  
 The Pomodoro Timer is a core execution tool of the application. It provides a highly visual, easy-to-use interface that guides users through structured work and break intervals. Its primary goal is to minimize friction in starting a focus session and to provide clear feedback on the current state of a cycle.
@@ -604,6 +603,7 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
