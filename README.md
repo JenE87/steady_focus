@@ -42,9 +42,9 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/c4c86dd9-827d-4ad7-9c7e-065957979433" />
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/83d23f80-e3ac-4899-9909-4097c4faaac6" />
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/4e447193-f48c-4cc1-a988-075d2e672055" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/649d197f-c1ee-4b68-a4af-0a0cb5bdb38f" />
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/506da30a-560a-46db-8164-de8d40580cbb" />
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/bc8f766b-cca8-4e08-a9f0-b227bb874c22" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/649d197f-c1ee-4b68-a4af-0a0cb5bdb38f" />
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/6ddd7838-683a-4c6b-abd5-70029d8f58a2" />
 <img height="250" alt="image" src="https://github.com/user-attachments/assets/134ee66a-5045-4d9e-9c8f-75a9a13b593e" />
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/06b5e7e1-5226-449e-9da6-e80fc9290154" />
@@ -603,6 +603,7 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
