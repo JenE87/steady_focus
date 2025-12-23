@@ -15,7 +15,7 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
     * Clean card grid layout with pagination and dedicated detail views.
     * Content published by authenticated admin users.
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/f789c046-3299-4d87-983a-1271bd5521e0" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/132aecca-9c5e-402d-902f-6af93b131d86" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/132aecca-9c5e-402d-902f-6af93b131d86" /><br/>
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/bb2cb5c8-a63c-49ae-b88f-4c5bc30f6f34" />
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/12a20e6c-4777-4e96-b3f6-4204647f30ee" />
 <img width="500" alt="Screenshot 2025-12-18 134656" src="https://github.com/user-attachments/assets/55b2262f-c47c-47bd-b46d-d3c97caf4a33" />
@@ -24,18 +24,15 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
 - **Idea Submission:**
     * Anyone (logged in or out) can submit productivity ideas via a dedicated form.
     * Submissions are stored for admin review, promoting content curation.
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/f1523b42-4521-4cbc-8ac1-df1a9199b5a3" />
-
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/57b51ea1-af38-4eab-9135-0dd93cc55705" />
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/ce86a0d6-7944-4fb9-b330-aa4ae40460e6" />
-<img width="500" alt="Screenshot 2025-12-18 134830" src="https://github.com/user-attachments/assets/cdd6e186-928f-4784-a144-def9dd1f4704" />
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/0b7849ba-ef1a-4140-8278-a2b19be5c38b" />
 
 - **User Accounts (Auth):**
     * Registration, login, and secure session management via **django-allauth**.
 <img height="400" alt="Screenshot 2025-12-18 135247" src="https://github.com/user-attachments/assets/7b8a3cf5-c93c-48f1-be8c-da61a5df9267" />
 <img width="600" alt="Screenshot 2025-12-18 135353" src="https://github.com/user-attachments/assets/f223bce0-8dbc-425a-8102-bd0f2cc3ce02" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/251ec382-4860-4f94-9fc6-0b43b9510e75" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/54b27b1b-909b-47bf-af67-a9a07f9b2d06" />
 
@@ -44,7 +41,7 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
     * Full CRUD functionality for creating, updating, and deleting tasks.
     * Quick-toggle completion directly from the task list.
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/72d491d1-57bc-4d7f-9222-3beb24518dea" />
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/2d7b4803-98ac-4404-b85b-5afd42283736" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/2d7b4803-98ac-4404-b85b-5afd42283736" />
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/4e447193-f48c-4cc1-a988-075d2e672055" />
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/6ddd7838-683a-4c6b-abd5-70029d8f58a2" />
 <img width="600" alt="Screenshot 2025-12-18 135423" src="https://github.com/user-attachments/assets/d1ae811e-2e9d-4309-96dc-0da06df11180" />
@@ -53,7 +50,6 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
 <img width="600" alt="Screenshot 2025-12-18 135908" src="https://github.com/user-attachments/assets/9597f177-01da-47b8-91a9-ac662f885c97" />
 <img width="600" alt="Screenshot 2025-12-18 135945" src="https://github.com/user-attachments/assets/6b0802ba-75fd-471c-91d3-acdcdee93e0a" />
 <img width="600" alt="Screenshot 2025-12-18 140200" src="https://github.com/user-attachments/assets/25e4aff0-48f9-4102-9f0b-1e3b2819e802" />
-<img width="600" alt="Screenshot 2025-12-18 140022" src="https://github.com/user-attachments/assets/dab57ac7-af41-443e-a70c-684c69d04139" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/c198893d-9038-4cee-8586-e15315c3d057" />
 
 
@@ -98,7 +94,7 @@ The Task model is linked to the User model via a ForeignKey to ensure tasks are 
 ## Wireframes
 ### Homepage (Mobile & Desktop)
 <img width="500" alt="Screenshot 2025-12-16 182626" src="https://github.com/user-attachments/assets/2386f753-b719-40de-a45d-fa0d6f8ac5f2" />
-<img width="500" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
+<img width="600" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
 
 **Purpose**  
 The homepage introduces *Steady Focus* and communicates its core goal: helping users find focus through mindful task management and timed work sessions, while offering access to a public productivity blog.
@@ -149,7 +145,7 @@ These wireframes illustrate how the homepage adapts once a user is logged in.
 
 ### The Blog (Post List) (Mobile & Desktop)
 <img width="500" alt="Screenshot 2025-12-16 191711" src="https://github.com/user-attachments/assets/9c3d3c8e-27fc-4835-b68d-9fcb876ba2fb" />
-<img width="500" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
+<img width="600" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
 
 **Purpose**  
 The Blog page provides users with access to short, focused articles related to productivity, focus, and task management. It is designed to encourage reading, exploration, and optional community contribution while keeping the interface clean and distraction-free.
@@ -237,7 +233,7 @@ The Pomodoro Timer is a core execution tool of the application. It provides a hi
 - The large, clear numerals and absence of unnecessary animations or flashing elements prevent sensory overload while keeping the user informed of the remaining time.
 
 ### Task List (Mobile & Desktop)
-<img width="500" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
+<img width="600" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
 <img width="500" alt="Screenshot 2025-12-16 191918" src="https://github.com/user-attachments/assets/d6d91fee-e054-4e76-8eb2-5530dd75d412" />
 
 **Purpose**  
@@ -610,6 +606,7 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
