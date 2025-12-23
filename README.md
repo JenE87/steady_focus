@@ -14,44 +14,59 @@ Steady Focus aims to help users plan and complete focused work sessions, manage 
 - **Public Blog:**
     * Clean card grid layout with pagination and dedicated detail views.
     * Content published by authenticated admin users.
-<img width="600" alt="Screenshot 2025-12-18 134656" src="https://github.com/user-attachments/assets/55b2262f-c47c-47bd-b46d-d3c97caf4a33" />
-<img width="600" alt="Screenshot 2025-12-18 134749" src="https://github.com/user-attachments/assets/6c0249c6-4bfd-4ff2-acec-cd763ecb2ac3" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/f789c046-3299-4d87-983a-1271bd5521e0" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/132aecca-9c5e-402d-902f-6af93b131d86" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/bb2cb5c8-a63c-49ae-b88f-4c5bc30f6f34" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/12a20e6c-4777-4e96-b3f6-4204647f30ee" />
+<img width="500" alt="Screenshot 2025-12-18 134656" src="https://github.com/user-attachments/assets/55b2262f-c47c-47bd-b46d-d3c97caf4a33" />
+<img width="500" alt="Screenshot 2025-12-18 134749" src="https://github.com/user-attachments/assets/6c0249c6-4bfd-4ff2-acec-cd763ecb2ac3" />
 
 - **Idea Submission:**
     * Anyone (logged in or out) can submit productivity ideas via a dedicated form.
     * Submissions are stored for admin review, promoting content curation.
-<img width="600" alt="Screenshot 2025-12-18 134830" src="https://github.com/user-attachments/assets/cdd6e186-928f-4784-a144-def9dd1f4704" />
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/0b7849ba-ef1a-4140-8278-a2b19be5c38b" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/f1523b42-4521-4cbc-8ac1-df1a9199b5a3" />
+
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/57b51ea1-af38-4eab-9135-0dd93cc55705" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/ce86a0d6-7944-4fb9-b330-aa4ae40460e6" />
+<img width="500" alt="Screenshot 2025-12-18 134830" src="https://github.com/user-attachments/assets/cdd6e186-928f-4784-a144-def9dd1f4704" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/0b7849ba-ef1a-4140-8278-a2b19be5c38b" />
 
 - **User Accounts (Auth):**
     * Registration, login, and secure session management via **django-allauth**.
 <img height="400" alt="Screenshot 2025-12-18 135247" src="https://github.com/user-attachments/assets/7b8a3cf5-c93c-48f1-be8c-da61a5df9267" />
-<img width="700" alt="Screenshot 2025-12-18 135353" src="https://github.com/user-attachments/assets/f223bce0-8dbc-425a-8102-bd0f2cc3ce02" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/251ec382-4860-4f94-9fc6-0b43b9510e75" />
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/54b27b1b-909b-47bf-af67-a9a07f9b2d06" />
+<img width="600" alt="Screenshot 2025-12-18 135353" src="https://github.com/user-attachments/assets/f223bce0-8dbc-425a-8102-bd0f2cc3ce02" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/53a77a58-bf0b-4854-92ed-57d7fbfb0879" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/251ec382-4860-4f94-9fc6-0b43b9510e75" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/54b27b1b-909b-47bf-af67-a9a07f9b2d06" />
 
 - **Task Management (CRUD):**
     * Private task lists (each user sees only their own).
     * Full CRUD functionality for creating, updating, and deleting tasks.
     * Quick-toggle completion directly from the task list.
-<img width="700" alt="Screenshot 2025-12-18 135423" src="https://github.com/user-attachments/assets/d1ae811e-2e9d-4309-96dc-0da06df11180" />
-<img width="700" alt="Screenshot 2025-12-18 135541" src="https://github.com/user-attachments/assets/03488ee8-4c87-47cc-b035-07e29dd4ad6c" />
-<img width="700" alt="Screenshot 2025-12-18 135822" src="https://github.com/user-attachments/assets/975c03a8-2828-4b33-94e6-e15c42361566" />
-<img width="700" alt="Screenshot 2025-12-18 135908" src="https://github.com/user-attachments/assets/9597f177-01da-47b8-91a9-ac662f885c97" />
-<img width="700" alt="Screenshot 2025-12-18 135945" src="https://github.com/user-attachments/assets/6b0802ba-75fd-471c-91d3-acdcdee93e0a" />
-<img width="700" alt="Screenshot 2025-12-18 140200" src="https://github.com/user-attachments/assets/25e4aff0-48f9-4102-9f0b-1e3b2819e802" />
-<img width="700" alt="Screenshot 2025-12-18 140022" src="https://github.com/user-attachments/assets/dab57ac7-af41-443e-a70c-684c69d04139" />
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/c198893d-9038-4cee-8586-e15315c3d057" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/72d491d1-57bc-4d7f-9222-3beb24518dea" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/2d7b4803-98ac-4404-b85b-5afd42283736" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/4e447193-f48c-4cc1-a988-075d2e672055" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/6ddd7838-683a-4c6b-abd5-70029d8f58a2" />
+<img width="600" alt="Screenshot 2025-12-18 135423" src="https://github.com/user-attachments/assets/d1ae811e-2e9d-4309-96dc-0da06df11180" />
+<img width="600" alt="Screenshot 2025-12-18 135541" src="https://github.com/user-attachments/assets/03488ee8-4c87-47cc-b035-07e29dd4ad6c" />
+<img width="600" alt="Screenshot 2025-12-18 135822" src="https://github.com/user-attachments/assets/975c03a8-2828-4b33-94e6-e15c42361566" />
+<img width="600" alt="Screenshot 2025-12-18 135908" src="https://github.com/user-attachments/assets/9597f177-01da-47b8-91a9-ac662f885c97" />
+<img width="600" alt="Screenshot 2025-12-18 135945" src="https://github.com/user-attachments/assets/6b0802ba-75fd-471c-91d3-acdcdee93e0a" />
+<img width="600" alt="Screenshot 2025-12-18 140200" src="https://github.com/user-attachments/assets/25e4aff0-48f9-4102-9f0b-1e3b2819e802" />
+<img width="600" alt="Screenshot 2025-12-18 140022" src="https://github.com/user-attachments/assets/dab57ac7-af41-443e-a70c-684c69d04139" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/c198893d-9038-4cee-8586-e15315c3d057" />
 
 
 - **Pomodoro Timer:**
     * Built-in client-side timer with audio notifications on cycle completion.
     * Supports popular presets (25/5 and 50/10) and auto-switches between work/break cycles.
-<img width="500" alt="Screenshot 2025-12-18 140335" src="https://github.com/user-attachments/assets/5577e880-0152-417a-8d0f-e0074e1b36f4" />
-<img width="500" alt="Screenshot 2025-12-18 140405" src="https://github.com/user-attachments/assets/55896b12-bbdf-434b-8bb5-1b1694b9e065" />
-<img width="500" alt="Screenshot 2025-12-18 140439" src="https://github.com/user-attachments/assets/8b64befa-52e1-4864-bb23-efe24229b939" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/7ba7e3cd-46d6-4080-a06f-4be27b0e43c7" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/2ceb359e-cdf2-45a1-9d81-ac5b554057da" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/47e006b8-7ac1-4327-9e25-f883e4268aad" />
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/3939c690-f96c-43a6-8ca6-281682d2f764" />
+<img width="400" alt="Screenshot 2025-12-18 140335" src="https://github.com/user-attachments/assets/5577e880-0152-417a-8d0f-e0074e1b36f4" />
+<img width="400" alt="Screenshot 2025-12-18 140405" src="https://github.com/user-attachments/assets/55896b12-bbdf-434b-8bb5-1b1694b9e065" />
+<img width="400" alt="Screenshot 2025-12-18 140439" src="https://github.com/user-attachments/assets/8b64befa-52e1-4864-bb23-efe24229b939" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/7ba7e3cd-46d6-4080-a06f-4be27b0e43c7" />
 
 ### Advanced Features & UX Improvements
 - **Task Prioritization & Organization:** Users can filter tasks by completion status and sort by Due Date, Title, or Created Date.
@@ -82,8 +97,8 @@ The Task model is linked to the User model via a ForeignKey to ensure tasks are 
 
 ## Wireframes
 ### Homepage (Mobile & Desktop)
-<img width="700" alt="Screenshot 2025-12-16 182626" src="https://github.com/user-attachments/assets/2386f753-b719-40de-a45d-fa0d6f8ac5f2" />
-<img width="700" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
+<img width="500" alt="Screenshot 2025-12-16 182626" src="https://github.com/user-attachments/assets/2386f753-b719-40de-a45d-fa0d6f8ac5f2" />
+<img width="500" alt="Screenshot 2025-12-16 183034" src="https://github.com/user-attachments/assets/a3f413ea-ea62-4d9f-bcbb-4bbc8d7c6557" />
 
 **Purpose**  
 The homepage introduces *Steady Focus* and communicates its core goal: helping users find focus through mindful task management and timed work sessions, while offering access to a public productivity blog.
@@ -117,7 +132,7 @@ The homepage introduces *Steady Focus* and communicates its core goal: helping u
 - Responsive design ensures no loss of functionality on smaller screens.
 
 ### Homepage Authenticated State (Mobile)
-<img width="700" alt="Screenshot 2025-12-16 191034" src="https://github.com/user-attachments/assets/c54ae5b8-e63a-4ca5-ac4f-7c49086e4817" />
+<img width="500" alt="Screenshot 2025-12-16 191034" src="https://github.com/user-attachments/assets/c54ae5b8-e63a-4ca5-ac4f-7c49086e4817" />
 
 These wireframes illustrate how the homepage adapts once a user is logged in.
 
@@ -133,8 +148,8 @@ These wireframes illustrate how the homepage adapts once a user is logged in.
 - Menu toggle ensures functionality remains accessible on small screens without clutter
 
 ### The Blog (Post List) (Mobile & Desktop)
-<img width="700" alt="Screenshot 2025-12-16 191711" src="https://github.com/user-attachments/assets/9c3d3c8e-27fc-4835-b68d-9fcb876ba2fb" />
-<img width="700" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
+<img width="500" alt="Screenshot 2025-12-16 191711" src="https://github.com/user-attachments/assets/9c3d3c8e-27fc-4835-b68d-9fcb876ba2fb" />
+<img width="500" alt="Screenshot 2025-12-16 191735" src="https://github.com/user-attachments/assets/0233f951-af59-46ab-a3b2-fce016c9ab9f" />
 
 **Purpose**  
 The Blog page provides users with access to short, focused articles related to productivity, focus, and task management. It is designed to encourage reading, exploration, and optional community contribution while keeping the interface clean and distraction-free.
@@ -165,7 +180,7 @@ The Blog page provides users with access to short, focused articles related to p
 - The design supports both casual browsing and intentional reading without overwhelming the user.
 
 ### The Blog Detail Page (Mobile & Desktop)
-<img width="700" alt="Screenshot 2025-12-16 192544" src="https://github.com/user-attachments/assets/470ed6b2-e640-41fe-93ac-354932c37e5d" />
+<img width="500" alt="Screenshot 2025-12-16 192544" src="https://github.com/user-attachments/assets/470ed6b2-e640-41fe-93ac-354932c37e5d" />
 
 **Purpose**  
 The Blog Post Detail page is the final destination for readers. Its primary goal is to provide a calm, highly readable environment for consuming long-form content. By removing sidebar distractions and grid elements, the focus remains entirely on the article.
@@ -192,8 +207,8 @@ The Blog Post Detail page is the final destination for readers. Its primary goal
 - The design emphasizes line spacing and paragraph breaks to make the text scannable and less intimidating.
 
 ### Pomodoro Timer (Focus Timer) (Mobile & Desktop)
-<img width="600" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
-<img width="600" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
+<img width="500" alt="Screenshot 2025-12-16 191824" src="https://github.com/user-attachments/assets/0a71c5e5-0681-47d9-b275-05026576813f" />
+<img width="500" alt="Screenshot 2025-12-16 191832" src="https://github.com/user-attachments/assets/e4a8aecc-bfcf-496f-a743-6ac78218c8e1" />
 
 **Purpose**  
 The Pomodoro Timer is a core execution tool of the application. It provides a highly visual, easy-to-use interface that guides users through structured work and break intervals. Its primary goal is to minimize friction in starting a focus session and to provide clear feedback on the current state of a cycle.
@@ -222,8 +237,8 @@ The Pomodoro Timer is a core execution tool of the application. It provides a hi
 - The large, clear numerals and absence of unnecessary animations or flashing elements prevent sensory overload while keeping the user informed of the remaining time.
 
 ### Task List (Mobile & Desktop)
-<img width="700" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
-<img width="700" alt="Screenshot 2025-12-16 191918" src="https://github.com/user-attachments/assets/d6d91fee-e054-4e76-8eb2-5530dd75d412" />
+<img width="500" alt="Screenshot 2025-12-16 191911" src="https://github.com/user-attachments/assets/b938838a-ef6b-4a6e-9477-94db4342b791" />
+<img width="500" alt="Screenshot 2025-12-16 191918" src="https://github.com/user-attachments/assets/d6d91fee-e054-4e76-8eb2-5530dd75d412" />
 
 **Purpose**  
 The Task List is the command center for user productivity. It allows users to externalize their mental to-do list into a structured, manageable format. The primary goal is to provide a clear overview of upcoming commitments while offering useful tools to filter and prioritize work without overwhelming the user.
@@ -276,6 +291,7 @@ The following tools and technologies were used to build this project:
 - **Python virtual Environment (venv)**
 - **Balsamiq** (wireframe creation)
 - **SmartDraw / LucidChart** (ERD creation)
+- **Favicon.io** (Favicon Generator Text used to create favicon)
 - **LanguageTool** (grammar, spelling, paraphrasing support in code strings and documentation)
 - **ChatGPT + Google Gemini** (planning, debugging, and documentation support)
 
@@ -594,6 +610,7 @@ During local development, `DEBUG` is set to `True` via a `.env` file. In the dep
 - [AuDHD Psychiatry](https://www.audhdpsychiatry.co.uk/adhd-study-hacks/)
 - [dr.carrie](https://www.drcarriejackson.com/blog/study-tips-for-the-neurodivergent-brain)
 - [sunsama](https://www.sunsama.com/blog/how-to-focus-better-with-adhd)
+
 
 
 
